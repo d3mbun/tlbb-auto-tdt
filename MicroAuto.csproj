@@ -1,0 +1,1474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <LangVersion>latest</LangVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{420B604B-2EB5-4492-BACE-D73878C6B1B6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MicroAuto</RootNamespace>
+    <AssemblyName>MicroAuto</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClassLibrary2">
+      <HintPath>..\ClassLibrary2\bin\Release\net5.0\ClassLibrary2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountEx.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Control\CheckGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CheckGroupBox.designer.cs">
+      <DependentUpon>CheckGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\ComboPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\ComboPlayer.Designer.cs">
+      <DependentUpon>ComboPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\GameInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\GameInfo.Designer.cs">
+      <DependentUpon>GameInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\AutoPK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\AutoPK.Designer.cs">
+      <DependentUpon>AutoPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\BinhThanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\BinhThanh.Designer.cs">
+      <DependentUpon>BinhThanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\CleanTrash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\CleanTrash.Designer.cs">
+      <DependentUpon>CleanTrash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\ConfigBossMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\ConfigBossMap.Designer.cs">
+      <DependentUpon>ConfigBossMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LvEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\NonFlickerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DebugEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugEx.designer.cs">
+      <DependentUpon>DebugEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DLLInjector\DLLInjector.cs" />
+    <Compile Include="DLLInjector\InjectionLibrary\CRTInjection.cs" />
+    <Compile Include="DLLInjector\InjectionLibrary\InjectionMethod.cs" />
+    <Compile Include="DLLInjector\InjectionLibrary\InjectionMethodType.cs" />
+    <Compile Include="DLLInjector\InjectionLibrary\ManualMap.cs" />
+    <Compile Include="DLLInjector\InjectionLibrary\StandardInjectionMethod.cs" />
+    <Compile Include="DLLInjector\InjectionLibrary\ThreadHijack.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\Constants.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\DATA_DIRECTORIES.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_BASE_RELOCATION.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_DATA_DIRECTORY.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_DOS_HEADER.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_FILE_HEADER.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_IMPORT_DESCRIPTOR.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_NT_HEADER32.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_OPTIONAL_HEADER32.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_RESOURCE_DATA_ENTRY.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_RESOURCE_DIRECTORY.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_RESOURCE_DIRECTORY_ENTRY.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_SECTION_HEADER.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\IMAGE_THUNK_DATA.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\PortableExecutable.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\ResourceWalker.cs" />
+    <Compile Include="DLLInjector\JLibrary\PortableExecutable\U1.cs" />
+    <Compile Include="DLLInjector\JLibrary\Tools\ErrorBase.cs" />
+    <Compile Include="DLLInjector\JLibrary\Tools\MemoryIterator.cs" />
+    <Compile Include="DLLInjector\JLibrary\Tools\UnmanagedBuffer.cs" />
+    <Compile Include="DLLInjector\JLibrary\Tools\Utils.cs" />
+    <Compile Include="DLLInjector\JLibrary\Win32\Win32Ptr.cs" />
+    <Compile Include="DLLInjector\JLibrary\Win32\WinAPI.cs" />
+    <Compile Include="DownloadManager\CalculatedSegment.cs" />
+    <Compile Include="DownloadManager\Common\BoolFormatter.cs" />
+    <Compile Include="DownloadManager\Common\ByteFormatter.cs" />
+    <Compile Include="DownloadManager\Common\PathHelper.cs" />
+    <Compile Include="DownloadManager\Common\TimeSpanFormatter.cs" />
+    <Compile Include="DownloadManager\Concurrency\ObjectLocker.cs" />
+    <Compile Include="DownloadManager\Concurrency\ReaderWriterObjectLocker.cs" />
+    <Compile Include="DownloadManager\Downloader.cs" />
+    <Compile Include="DownloadManager\DownloaderState.cs" />
+    <Compile Include="DownloadManager\DownloadManager.cs" />
+    <Compile Include="DownloadManager\EventArgs.cs" />
+    <Compile Include="DownloadManager\Extensions\IExtension.cs" />
+    <Compile Include="DownloadManager\Extensions\IExtensionParameters.cs" />
+    <Compile Include="DownloadManager\Extensions\IInitializable.cs" />
+    <Compile Include="DownloadManager\Extensions\IUIExtension.cs" />
+    <Compile Include="DownloadManager\IMirrorSelector.cs" />
+    <Compile Include="DownloadManager\IProtocolProvider.cs" />
+    <Compile Include="DownloadManager\ISegmentCalculator.cs" />
+    <Compile Include="DownloadManager\MinSizeSegmentCalculator.cs" />
+    <Compile Include="DownloadManager\ProtocolProviderFactory.cs" />
+    <Compile Include="DownloadManager\Protocols\BaseProtocolProvider.cs" />
+    <Compile Include="DownloadManager\Protocols\FtpProtocolProvider.cs" />
+    <Compile Include="DownloadManager\Protocols\HttpFtpProtocolExtension.cs" />
+    <Compile Include="DownloadManager\Protocols\HttpFtpProtocolParametersSettingsProxy.cs" />
+    <Compile Include="DownloadManager\Protocols\HttpFtpProtocolUIExtension.cs" />
+    <Compile Include="DownloadManager\Protocols\HttpProtocolProvider.cs" />
+    <Compile Include="DownloadManager\Protocols\IHttpFtpProtocolParameters.cs" />
+    <Compile Include="DownloadManager\Protocols\UI\Proxy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DownloadManager\Protocols\UI\Proxy.designer.cs">
+      <DependentUpon>Proxy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadManager\RemoteFileInfo.cs" />
+    <Compile Include="DownloadManager\ResourceLocation.cs" />
+    <Compile Include="DownloadManager\Segment.cs" />
+    <Compile Include="DownloadManager\SegmentState.cs" />
+    <Compile Include="DownloadManager\SequentialMirrorSelector.cs" />
+    <Compile Include="DownloadManager\Settings.cs" />
+    <Compile Include="FastColoredTextBox\AutocompleteItem.cs" />
+    <Compile Include="FastColoredTextBox\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Bookmarks.cs" />
+    <Compile Include="FastColoredTextBox\Char.cs" />
+    <Compile Include="FastColoredTextBox\CommandManager.cs" />
+    <Compile Include="FastColoredTextBox\Commands.cs" />
+    <Compile Include="FastColoredTextBox\DocumentMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\EncodingDetector.cs" />
+    <Compile Include="FastColoredTextBox\ExportToHTML.cs" />
+    <Compile Include="FastColoredTextBox\ExportToRTF.cs" />
+    <Compile Include="FastColoredTextBox\FastColoredTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\FileTextSource.cs" />
+    <Compile Include="FastColoredTextBox\FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\FindForm.Designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\GoToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\GoToForm.Designer.cs">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Hints.cs" />
+    <Compile Include="FastColoredTextBox\Hotkeys.cs" />
+    <Compile Include="FastColoredTextBox\HotkeysEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\HotkeysEditorForm.Designer.cs">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\LimitedStack.cs" />
+    <Compile Include="FastColoredTextBox\Line.cs" />
+    <Compile Include="FastColoredTextBox\LineNumberFormatting.cs" />
+    <Compile Include="FastColoredTextBox\LinesAccessor.cs" />
+    <Compile Include="FastColoredTextBox\MacrosManager.cs" />
+    <Compile Include="FastColoredTextBox\Place.cs" />
+    <Compile Include="FastColoredTextBox\PlatformType.cs" />
+    <Compile Include="FastColoredTextBox\Range.cs" />
+    <Compile Include="FastColoredTextBox\ReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\ReplaceForm.Designer.cs">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Ruler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Ruler.Designer.cs">
+      <DependentUpon>Ruler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Style.cs" />
+    <Compile Include="FastColoredTextBox\SyntaxDescriptor.cs" />
+    <Compile Include="FastColoredTextBox\SyntaxHighlighter.cs" />
+    <Compile Include="FastColoredTextBox\TextSource.cs" />
+    <Compile Include="FastColoredTextBox\TypeDescriptor.cs" />
+    <Compile Include="FastColoredTextBox\UnfocusablePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\VisualMarker.cs" />
+    <Compile Include="FastMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastMove.Designer.cs">
+      <DependentUpon>FastMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GAME\Auto.cs" />
+    <Compile Include="GAME\CheDo.cs" />
+    <Compile Include="GAME\DatDoi.cs" />
+    <Compile Include="GAME\Game.cs" />
+    <Compile Include="GAME\MissionsType.cs" />
+    <Compile Include="GAME\NhiemVuCoBan.cs" />
+    <Compile Include="GAME\OldMemory.cs" />
+    <Compile Include="GAME\PacketItems.cs" />
+    <Compile Include="Item\BachBaoCac.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\BachBaoCac.Designer.cs">
+      <DependentUpon>BachBaoCac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\BoQua - Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\BoQua - Copy.Designer.cs">
+      <DependentUpon>BoQua - Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\Buff - Copy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\Buff - Copy.Designer.cs">
+      <DependentUpon>Buff - Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\BuyClone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\BuyClone.Designer.cs">
+      <DependentUpon>BuyClone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\BuyChucNang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\BuyChucNang.Designer.cs">
+      <DependentUpon>BuyChucNang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\CatDoThienCo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\CatDoThienCo.Designer.cs">
+      <DependentUpon>CatDoThienCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\CatDo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\CatDo.Designer.cs">
+      <DependentUpon>CatDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code.designer.cs">
+      <DependentUpon>Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\FastTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\FastTask.Designer.cs">
+      <DependentUpon>FastTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniParser.cs" />
+    <Compile Include="Item\ConfigBinhThanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\ConfigBinhThanh.Designer.cs">
+      <DependentUpon>ConfigBinhThanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\GameItemForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\GameItemForm.Designer.cs">
+      <DependentUpon>GameItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\GomItemKNB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\GomItemKNB.Designer.cs">
+      <DependentUpon>GomItemKNB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\LayDoThienCo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\LayDoThienCo.Designer.cs">
+      <DependentUpon>LayDoThienCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\LayDo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\LayDo.Designer.cs">
+      <DependentUpon>LayDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\SellItem - Copy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\SellItem - Copy.Designer.cs">
+      <DependentUpon>SellItem - Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\SleepTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\SleepTime.Designer.cs">
+      <DependentUpon>SleepTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\TextEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\TextEdit.Designer.cs">
+      <DependentUpon>TextEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GAME\QuanDoan.cs" />
+    <Compile Include="RemOptionEx\RemConfig.cs" />
+    <Compile Include="Item\DiChuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\DiChuyen.Designer.cs">
+      <DependentUpon>DiChuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\GomItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\GomItem.Designer.cs">
+      <DependentUpon>GomItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GAME\Pet.cs" />
+    <Compile Include="Alam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alam.Designer.cs">
+      <DependentUpon>Alam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alarm.designer.cs">
+      <DependentUpon>Alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlarmEx.Designer.cs">
+      <DependentUpon>AlarmEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AntiCaptcaManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AntiCaptcaManager.Designer.cs">
+      <DependentUpon>AntiCaptcaManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AntiCaptcha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AntiCaptcha.Designer.cs">
+      <DependentUpon>AntiCaptcha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArrayOfByte.cs" />
+    <Compile Include="Item\TuyenChien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\TuyenChien.Designer.cs">
+      <DependentUpon>TuyenChien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\BoQua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\BoQua.Designer.cs">
+      <DependentUpon>BoQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\BuyItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\BuyItem.Designer.cs">
+      <DependentUpon>BuyItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\Calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\CalendarEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\CalendarEx.Designer.cs">
+      <DependentUpon>CalendarEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\ChatLogs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\ChatLogs.Designer.cs">
+      <DependentUpon>ChatLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TabStrip.cs" />
+    <Compile Include="Item\MicroLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\MicroLogin.designer.cs">
+      <DependentUpon>MicroLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AlarmVaoPhai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AlarmVaoPhai.Designer.cs">
+      <DependentUpon>AlarmVaoPhai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AOB.cs" />
+    <Compile Include="ASM.cs" />
+    <Compile Include="Item\AutoMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\AutoMap.designer.cs">
+      <DependentUpon>AutoMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\Buff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\Buff.Designer.cs">
+      <DependentUpon>Buff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\BorderLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Item\LoginUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\LoginUser.Designer.cs">
+      <DependentUpon>LoginUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\NumericTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Item\TabLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\TabLogin.Designer.cs">
+      <DependentUpon>TabLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ToolTipEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConverterEx.cs" />
+    <Compile Include="Control\BorderedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Item\DropItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\DropItem.Designer.cs">
+      <DependentUpon>DropItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterCaptchaContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterCaptchaContainer.Designer.cs">
+      <DependentUpon>EnterCaptchaContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterCaptchaEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnterCaptchaEx.Designer.cs">
+      <DependentUpon>EnterCaptchaEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\ChiNhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\ChiNhat.Designer.cs">
+      <DependentUpon>ChiNhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionLoader.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\OnlyAttack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\OnlyAttack.Designer.cs">
+      <DependentUpon>OnlyAttack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REMELIDEA\ExLogger.cs" />
+    <Compile Include="REMELIDEA\PipeClient.cs" />
+    <Compile Include="REMELIDEA\PipeServer.cs" />
+    <Compile Include="ServerTime.cs" />
+    <Compile Include="SQLite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLite.Designer.cs">
+      <DependentUpon>SQLite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STATIC\MAP\WORLD\KimLang.cs" />
+    <Compile Include="STATIC\LITESQL.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\DAOHOA.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\QUYCOC.cs" />
+    <Compile Include="STATIC\MAP\PHUBAN\LOIDAISINHTU.cs" />
+    <Compile Include="STATIC\MAP\PHUBAN\PHIEUMIEUPHONG.cs" />
+    <Compile Include="STATIC\MAP\PHUBAN\THIEUTHATSON.cs" />
+    <Compile Include="STATIC\MAP\PHUBAN\TRANLONGKYCUOC.cs" />
+    <Compile Include="STATIC\MAP\PHUBAN\YENTUO.cs" />
+    <Compile Include="STATIC\Extension.cs" />
+    <Compile Include="STATIC\MAP\WORLD\BANG.cs" />
+    <Compile Include="STATIC\MAP\WORLD\BichDuanXuanLam.cs" />
+    <Compile Include="STATIC\MAP\WORLD\BienKinh.cs" />
+    <Compile Include="STATIC\MAP\WORLD\DAILY.cs" />
+    <Compile Include="STATIC\MAP\WORLD\GIAMNGUC.cs" />
+    <Compile Include="STATIC\MAP\WORLD\LACDUONG.cs" />
+    <Compile Include="STATIC\MAP\WORLD\LAULAN.cs" />
+    <Compile Include="STATIC\MAP\WORLD\PHUNGHOANGCOTHANH.cs" />
+    <Compile Include="STATIC\MAP\WORLD\PHUNGMINHTRAN.cs" />
+    <Compile Include="STATIC\MAP\WORLD\QUYTHI.cs" />
+    <Compile Include="STATIC\MAP\WORLD\THAIHO.cs" />
+    <Compile Include="STATIC\MAP\WORLD\THANHTHUSON.cs" />
+    <Compile Include="STATIC\MAP\WORLD\THUCHACOTRAN.cs" />
+    <Compile Include="STATIC\MAP\WORLD\TOCHAU.cs" />
+    <Compile Include="STATIC\MAP\WORLD\VanPhu.cs" />
+    <Compile Include="STATIC\MAP\WORLD\VIEMLATHIEN.cs" />
+    <Compile Include="System\AggregateException.cs" />
+    <Compile Include="System\Collections\Concurrent\BlockingCollection.cs" />
+    <Compile Include="System\Collections\Concurrent\ConcurrentBag.cs" />
+    <Compile Include="System\Collections\Concurrent\ConcurrentDictionary.cs" />
+    <Compile Include="System\Collections\Concurrent\ConcurrentQueue.cs" />
+    <Compile Include="System\Collections\Concurrent\ConcurrentStack.cs" />
+    <Compile Include="System\Collections\Concurrent\IProducerConsumerCollection.cs" />
+    <Compile Include="System\Collections\Concurrent\OrderablePartitioner.cs" />
+    <Compile Include="System\Collections\Concurrent\Partitioner.cs" />
+    <Compile Include="System\Collections\Concurrent\SystemCollectionsConcurrent_ProducerConsumerCollectionDebugView.cs" />
+    <Compile Include="System\Collections\Concurrent\SystemThreadingCollections_BlockingCollectionDebugView.cs" />
+    <Compile Include="System\Collections\Concurrent\SystemThreadingCollection_IProducerConsumerCollectionDebugView.cs" />
+    <Compile Include="System\Collections\Generic\Mscorlib_DictionaryDebugView.cs" />
+    <Compile Include="System\Diagnostics\Contracts\Contract.cs" />
+    <Compile Include="System\Environment2.cs" />
+    <Compile Include="System\Func_.cs" />
+    <Compile Include="System\Lazy.cs" />
+    <Compile Include="System\Linq\AggregationMinMaxHelpers.cs" />
+    <Compile Include="System\Linq\OrderedParallelQuery.cs" />
+    <Compile Include="System\Linq\ParallelEnumerable.cs" />
+    <Compile Include="System\Linq\ParallelExecutionMode.cs" />
+    <Compile Include="System\Linq\ParallelMergeOptions.cs" />
+    <Compile Include="System\Linq\ParallelQuery.cs" />
+    <Compile Include="System\Linq\Parallel\AnyAllSearchOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ArrayMergeHelper.cs" />
+    <Compile Include="System\Linq\Parallel\AssociativeAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\AsynchronousChannel.cs" />
+    <Compile Include="System\Linq\Parallel\AsynchronousChannelMergeEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\BinaryQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\CancellableEnumerable.cs" />
+    <Compile Include="System\Linq\Parallel\CancellationState.cs" />
+    <Compile Include="System\Linq\Parallel\ConcatKey.cs" />
+    <Compile Include="System\Linq\Parallel\ConcatQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ContainsSearchOperator.cs" />
+    <Compile Include="System\Linq\Parallel\CountAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DecimalAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DecimalMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DecimalSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DefaultIfEmptyQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DefaultMergeHelper.cs" />
+    <Compile Include="System\Linq\Parallel\DistinctQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DoubleAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DoubleMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\DoubleSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ElementAtQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\EmptyEnumerable.cs" />
+    <Compile Include="System\Linq\Parallel\EmptyEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\EnumerableWrapperWeakToStrong.cs" />
+    <Compile Include="System\Linq\Parallel\ExceptionAggregator.cs" />
+    <Compile Include="System\Linq\Parallel\ExceptQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ExchangeUtilities.cs" />
+    <Compile Include="System\Linq\Parallel\FirstQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\FixedMaxHeap.cs" />
+    <Compile Include="System\Linq\Parallel\FloatAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\FloatMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\FloatSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ForAllOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ForAllSpoolingTask.cs" />
+    <Compile Include="System\Linq\Parallel\GroupByElementSelectorQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\GroupByGrouping.cs" />
+    <Compile Include="System\Linq\Parallel\GroupByIdentityQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\GroupByQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\GroupByQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\GroupJoinQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\GrowingArray.cs" />
+    <Compile Include="System\Linq\Parallel\HashJoinQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\HashLookup.cs" />
+    <Compile Include="System\Linq\Parallel\HashRepartitionEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\HashRepartitionStream.cs" />
+    <Compile Include="System\Linq\Parallel\IMergeHelper.cs" />
+    <Compile Include="System\Linq\Parallel\IndexedSelectQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\IndexedWhereQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\InlinedAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\InlinedAggregationOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\IntAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\IntersectQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\IntMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\IntSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\IParallelPartitionable.cs" />
+    <Compile Include="System\Linq\Parallel\IPartitionedStreamRecipient.cs" />
+    <Compile Include="System\Linq\Parallel\JoinQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\LastQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ListChunk.cs" />
+    <Compile Include="System\Linq\Parallel\ListQueryResults.cs" />
+    <Compile Include="System\Linq\Parallel\LongAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\LongCountAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\LongMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\LongSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\Lookup.cs" />
+    <Compile Include="System\Linq\Parallel\MergeEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\MergeExecutor.cs" />
+    <Compile Include="System\Linq\Parallel\NoKeyMemoizationRequired.cs" />
+    <Compile Include="System\Linq\Parallel\NullableDecimalAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableDecimalMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableDecimalSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableDoubleAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableDoubleMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableDoubleSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableFloatAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableFloatMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableFloatSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableIntAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableIntMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableIntSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableLongAverageAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableLongMinMaxAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\NullableLongSumAggregationOperator.cs" />
+    <Compile Include="System\Linq\Parallel\OrderedGroupByElementSelectorQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\OrderedGroupByGrouping.cs" />
+    <Compile Include="System\Linq\Parallel\OrderedGroupByIdentityQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\OrderedGroupByQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\OrderedHashRepartitionEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\OrderedHashRepartitionStream.cs" />
+    <Compile Include="System\Linq\Parallel\OrderingQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\OrderPreservingMergeHelper.cs" />
+    <Compile Include="System\Linq\Parallel\OrderPreservingPipeliningMergeHelper.cs" />
+    <Compile Include="System\Linq\Parallel\OrderPreservingPipeliningSpoolingTask.cs" />
+    <Compile Include="System\Linq\Parallel\OrderPreservingSpoolingTask.cs" />
+    <Compile Include="System\Linq\Parallel\OrdinalIndexState.cs" />
+    <Compile Include="System\Linq\Parallel\Pair.cs" />
+    <Compile Include="System\Linq\Parallel\PairComparer.cs" />
+    <Compile Include="System\Linq\Parallel\ParallelEnumerableWrapper.cs" />
+    <Compile Include="System\Linq\Parallel\PartitionedDataSource.cs" />
+    <Compile Include="System\Linq\Parallel\PartitionedStream.cs" />
+    <Compile Include="System\Linq\Parallel\PartitionedStreamMerger.cs" />
+    <Compile Include="System\Linq\Parallel\PartitionerQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\PipelineSpoolingTask.cs" />
+    <Compile Include="System\Linq\Parallel\QueryAggregationOptions.cs" />
+    <Compile Include="System\Linq\Parallel\QueryExecutionOption.cs" />
+    <Compile Include="System\Linq\Parallel\QueryLifecycle.cs" />
+    <Compile Include="System\Linq\Parallel\QueryOpeningEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\QueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\QueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\QueryResults.cs" />
+    <Compile Include="System\Linq\Parallel\QuerySettings.cs" />
+    <Compile Include="System\Linq\Parallel\QueryTask.cs" />
+    <Compile Include="System\Linq\Parallel\QueryTaskGroupState.cs" />
+    <Compile Include="System\Linq\Parallel\RangeEnumerable.cs" />
+    <Compile Include="System\Linq\Parallel\RepeatEnumerable.cs" />
+    <Compile Include="System\Linq\Parallel\ReverseComparer.cs" />
+    <Compile Include="System\Linq\Parallel\ReverseQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\ScanQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\Scheduling.cs" />
+    <Compile Include="System\Linq\Parallel\SelectManyQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\SelectQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\Set.cs" />
+    <Compile Include="System\Linq\Parallel\Shared.cs" />
+    <Compile Include="System\Linq\Parallel\SingleQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\SortHelper.cs" />
+    <Compile Include="System\Linq\Parallel\SortQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\SortQueryOperatorEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\SortQueryOperatorResults.cs" />
+    <Compile Include="System\Linq\Parallel\SpoolingTask.cs" />
+    <Compile Include="System\Linq\Parallel\SpoolingTaskBase.cs" />
+    <Compile Include="System\Linq\Parallel\StopAndGoSpoolingTask.cs" />
+    <Compile Include="System\Linq\Parallel\SynchronousChannel.cs" />
+    <Compile Include="System\Linq\Parallel\SynchronousChannelMergeEnumerator.cs" />
+    <Compile Include="System\Linq\Parallel\TakeOrSkipQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\TakeOrSkipWhileQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\TraceHelpers.cs" />
+    <Compile Include="System\Linq\Parallel\UnaryQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\UnionQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\UnorderedHashRepartitionStream.cs" />
+    <Compile Include="System\Linq\Parallel\Util.cs" />
+    <Compile Include="System\Linq\Parallel\WhereQueryOperator.cs" />
+    <Compile Include="System\Linq\Parallel\Wrapper.cs" />
+    <Compile Include="System\Linq\Parallel\WrapperEqualityComparer.cs" />
+    <Compile Include="System\Linq\Parallel\ZipQueryOperator.cs" />
+    <Compile Include="System\OperationCanceledException2.cs" />
+    <Compile Include="System\SecuritySafeCriticalAttribute.cs" />
+    <Compile Include="System\System_LazyDebugView.cs" />
+    <Compile Include="System\Threading\Barrier.cs" />
+    <Compile Include="System\Threading\BarrierPostPhaseException.cs" />
+    <Compile Include="System\Threading\CancellationCallbackCoreWorkArguments.cs" />
+    <Compile Include="System\Threading\CancellationCallbackInfo.cs" />
+    <Compile Include="System\Threading\CancellationToken.cs" />
+    <Compile Include="System\Threading\CancellationTokenRegistration.cs" />
+    <Compile Include="System\Threading\CancellationTokenSource.cs" />
+    <Compile Include="System\Threading\CountdownEvent.cs" />
+    <Compile Include="System\Threading\LazyInitializer.cs" />
+    <Compile Include="System\Threading\LazyThreadSafetyMode.cs" />
+    <Compile Include="System\Threading\ManualResetEventSlim.cs" />
+    <Compile Include="System\Threading\Monitor2.cs" />
+    <Compile Include="System\Threading\Platform.cs" />
+    <Compile Include="System\Threading\PlatformHelper.cs" />
+    <Compile Include="System\Threading\SemaphoreSlim.cs" />
+    <Compile Include="System\Threading\SparselyPopulatedArray.cs" />
+    <Compile Include="System\Threading\SparselyPopulatedArrayAddInfo.cs" />
+    <Compile Include="System\Threading\SparselyPopulatedArrayFragment.cs" />
+    <Compile Include="System\Threading\SpinLock.cs" />
+    <Compile Include="System\Threading\SpinWait.cs" />
+    <Compile Include="System\Threading\StackCrawlMark2.cs" />
+    <Compile Include="System\Threading\SystemThreading_ThreadLocalDebugView.cs" />
+    <Compile Include="System\Threading\Tasks\IndexRange.cs" />
+    <Compile Include="System\Threading\Tasks\InternalTaskOptions.cs" />
+    <Compile Include="System\Threading\Tasks\IThreadPoolWorkItem.cs" />
+    <Compile Include="System\Threading\Tasks\Parallel.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelForReplicaTask.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelForReplicatingTask.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelLoopResult.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelLoopState.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelLoopState32.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelLoopState64.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelLoopStateFlags.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelLoopStateFlags32.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelLoopStateFlags64.cs" />
+    <Compile Include="System\Threading\Tasks\ParallelOptions.cs" />
+    <Compile Include="System\Threading\Tasks\RangeManager.cs" />
+    <Compile Include="System\Threading\Tasks\RangeWorker.cs" />
+    <Compile Include="System\Threading\Tasks\Shared.cs" />
+    <Compile Include="System\Threading\Tasks\StackGuard.cs" />
+    <Compile Include="System\Threading\Tasks\SynchronizationContextTaskScheduler.cs" />
+    <Compile Include="System\Threading\Tasks\SystemThreadingTasks_FutureDebugView.cs" />
+    <Compile Include="System\Threading\Tasks\SystemThreadingTasks_TaskDebugView.cs" />
+    <Compile Include="System\Threading\Tasks\Task.cs" />
+    <Compile Include="System\Threading\Tasks\TaskCanceledException.cs" />
+    <Compile Include="System\Threading\Tasks\TaskCompletionSource.cs" />
+    <Compile Include="System\Threading\Tasks\TaskContinuationOptions.cs" />
+    <Compile Include="System\Threading\Tasks\TaskCreationOptions.cs" />
+    <Compile Include="System\Threading\Tasks\TaskExceptionHolder.cs" />
+    <Compile Include="System\Threading\Tasks\TaskExtensions.cs" />
+    <Compile Include="System\Threading\Tasks\TaskFactory.cs" />
+    <Compile Include="System\Threading\Tasks\TaskScheduler.cs" />
+    <Compile Include="System\Threading\Tasks\TaskSchedulerException.cs" />
+    <Compile Include="System\Threading\Tasks\TaskStatus.cs" />
+    <Compile Include="System\Threading\Tasks\ThreadPoolTaskScheduler.cs" />
+    <Compile Include="System\Threading\Tasks\UnobservedTaskExceptionEventArgs.cs" />
+    <Compile Include="System\Threading\ThreadLocal.cs" />
+    <Compile Include="System\Threading\ThreadLocalGlobalCounter.cs" />
+    <Compile Include="Item\TalkChannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\TalkChannel.Designer.cs">
+      <DependentUpon>TalkChannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\SellItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\SellItem.Designer.cs">
+      <DependentUpon>SellItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STATIC\AutoMove.cs" />
+    <Compile Include="STATIC\GAMEDIC.cs" />
+    <Compile Include="STATIC\GameDictionary.cs" />
+    <Compile Include="STATIC\MAP.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\CAIBANG.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\DUONGMON.cs" />
+    <Compile Include="GAME\LUA.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\MINHGIAO.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\MODUNG.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\NGAMY.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\THIENLONG.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\THIENSON.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\THIEULAM.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\TIEUDAO.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\TINHTUC.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\VODANG.cs" />
+    <Compile Include="STATIC\PATH.cs" />
+    <Compile Include="STATIC\PRIVATEMOVE.cs" />
+    <Compile Include="STATIC\STATE.cs" />
+    <Compile Include="STATIC\MAP\MENPAI\MENPAIcs.cs" />
+    <Compile Include="REMELIDEA\Scripts\ScriptManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REMELIDEA\Scripts\ScriptManager.Designer.cs">
+      <DependentUpon>ScriptManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REMELIDEA\Scripts\Scripts.cs" />
+    <Compile Include="STATIC\USER32.cs" />
+    <Compile Include="GAME\Team.cs" />
+    <Compile Include="STATIC\URL.cs" />
+    <Compile Include="Control\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\ColorSlider.designer.cs">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GAME\QuestFrame.cs" />
+    <Compile Include="GAME\GameControl.cs" />
+    <Compile Include="GAME\Address.cs" />
+    <Compile Include="GAME\GameObject.cs" />
+    <Compile Include="GAME\GameObjects.cs" />
+    <Compile Include="GlobalKeyboardHook.cs" />
+    <Compile Include="Control\ListViewSortChecked.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IdleTimeFinder.cs" />
+    <Compile Include="Loader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loader.designer.cs">
+      <DependentUpon>Loader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaxExp.cs" />
+    <Compile Include="FingerPrint.cs" />
+    <Compile Include="Control\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Memory.cs" />
+    <Compile Include="ModifyRegistry.cs" />
+    <Compile Include="Music.cs" />
+    <Compile Include="Item\UseItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\UseItem.Designer.cs">
+      <DependentUpon>UseItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tuple\Collections\IStructuralComparable.cs" />
+    <Compile Include="Tuple\Collections\IStructuralEquatable.cs" />
+    <Compile Include="Tuple\HashHelpers.cs" />
+    <Compile Include="Tuple\ITuple.cs" />
+    <Compile Include="Tuple\Tuple.2.cs" />
+    <Compile Include="Tuple\Tuple.3.cs" />
+    <Compile Include="Tuple\Tuple.4.cs" />
+    <Compile Include="Tuple\Tuple.5.cs" />
+    <Compile Include="Tuple\Tuple.6.cs" />
+    <Compile Include="Tuple\Tuple.7.cs" />
+    <Compile Include="Tuple\Tuple.8.cs" />
+    <Compile Include="Tuple\Tuple.9.cs" />
+    <Compile Include="Tuple\Tuple.cs" />
+    <Compile Include="Tuple\TupleElementNamesAttribute.cs" />
+    <Compile Include="Tuple\ValueTuple.cs" />
+    <Compile Include="Item\TuyetGiao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\TuyetGiao.Designer.cs">
+      <DependentUpon>TuyetGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <Compile Include="VerticalTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="websocket-sharp\ByteOrder.cs" />
+    <Compile Include="websocket-sharp\CloseEventArgs.cs" />
+    <Compile Include="websocket-sharp\CloseStatusCode.cs" />
+    <Compile Include="websocket-sharp\CompressionMethod.cs" />
+    <Compile Include="websocket-sharp\ErrorEventArgs.cs" />
+    <Compile Include="websocket-sharp\Ext.cs" />
+    <Compile Include="websocket-sharp\Fin.cs" />
+    <Compile Include="websocket-sharp\HttpBase.cs" />
+    <Compile Include="websocket-sharp\HttpRequest.cs" />
+    <Compile Include="websocket-sharp\HttpResponse.cs" />
+    <Compile Include="websocket-sharp\LogData.cs" />
+    <Compile Include="websocket-sharp\Logger.cs" />
+    <Compile Include="websocket-sharp\LogLevel.cs" />
+    <Compile Include="websocket-sharp\Mask.cs" />
+    <Compile Include="websocket-sharp\MessageEventArgs.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationBase.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationChallenge.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationResponse.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationSchemes.cs" />
+    <Compile Include="websocket-sharp\Net\Chunk.cs" />
+    <Compile Include="websocket-sharp\Net\ChunkedRequestStream.cs" />
+    <Compile Include="websocket-sharp\Net\ChunkStream.cs" />
+    <Compile Include="websocket-sharp\Net\ClientSslConfiguration.cs" />
+    <Compile Include="websocket-sharp\Net\Cookie.cs" />
+    <Compile Include="websocket-sharp\Net\CookieCollection.cs" />
+    <Compile Include="websocket-sharp\Net\CookieException.cs" />
+    <Compile Include="websocket-sharp\Net\EndPointListener.cs" />
+    <Compile Include="websocket-sharp\Net\EndPointManager.cs" />
+    <Compile Include="websocket-sharp\Net\HttpBasicIdentity.cs" />
+    <Compile Include="websocket-sharp\Net\HttpConnection.cs" />
+    <Compile Include="websocket-sharp\Net\HttpDigestIdentity.cs" />
+    <Compile Include="websocket-sharp\Net\HttpHeaderInfo.cs" />
+    <Compile Include="websocket-sharp\Net\HttpHeaderType.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListener.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerAsyncResult.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerContext.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerException.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerPrefix.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerPrefixCollection.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerRequest.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerResponse.cs" />
+    <Compile Include="websocket-sharp\Net\HttpRequestHeader.cs" />
+    <Compile Include="websocket-sharp\Net\HttpResponseHeader.cs" />
+    <Compile Include="websocket-sharp\Net\HttpStatusCode.cs" />
+    <Compile Include="websocket-sharp\Net\HttpStreamAsyncResult.cs" />
+    <Compile Include="websocket-sharp\Net\HttpUtility.cs" />
+    <Compile Include="websocket-sharp\Net\HttpVersion.cs" />
+    <Compile Include="websocket-sharp\Net\InputChunkState.cs" />
+    <Compile Include="websocket-sharp\Net\InputState.cs" />
+    <Compile Include="websocket-sharp\Net\LineState.cs" />
+    <Compile Include="websocket-sharp\Net\NetworkCredential.cs" />
+    <Compile Include="websocket-sharp\Net\QueryStringCollection.cs" />
+    <Compile Include="websocket-sharp\Net\ReadBufferState.cs" />
+    <Compile Include="websocket-sharp\Net\RequestStream.cs" />
+    <Compile Include="websocket-sharp\Net\ResponseStream.cs" />
+    <Compile Include="websocket-sharp\Net\ServerSslConfiguration.cs" />
+    <Compile Include="websocket-sharp\Net\WebHeaderCollection.cs" />
+    <Compile Include="websocket-sharp\Net\WebSockets\HttpListenerWebSocketContext.cs" />
+    <Compile Include="websocket-sharp\Net\WebSockets\TcpListenerWebSocketContext.cs" />
+    <Compile Include="websocket-sharp\Net\WebSockets\WebSocketContext.cs" />
+    <Compile Include="websocket-sharp\Opcode.cs" />
+    <Compile Include="websocket-sharp\PayloadData.cs" />
+    <Compile Include="websocket-sharp\Rsv.cs" />
+    <Compile Include="websocket-sharp\Server\HttpRequestEventArgs.cs" />
+    <Compile Include="websocket-sharp\Server\HttpServer.cs" />
+    <Compile Include="websocket-sharp\Server\IWebSocketSession.cs" />
+    <Compile Include="websocket-sharp\Server\ServerState.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketBehavior.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServer.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServiceHost.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServiceHost`1.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServiceManager.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketSessionManager.cs" />
+    <Compile Include="websocket-sharp\WebSocket.cs" />
+    <Compile Include="websocket-sharp\WebSocketException.cs" />
+    <Compile Include="websocket-sharp\WebSocketFrame.cs" />
+    <Compile Include="websocket-sharp\WebSocketState.cs" />
+    <Compile Include="xNet\Html.cs" />
+    <Compile Include="xNet\NetException.cs" />
+    <Compile Include="xNet\RequestParams.cs" />
+    <Compile Include="xNet\Resources.Designer.cs" />
+    <Compile Include="xNet\WinInet.cs" />
+    <Compile Include="xNet\~Http\CookieDictionary.cs" />
+    <Compile Include="xNet\~Http\Http.cs" />
+    <Compile Include="xNet\~Http\HttpException.cs" />
+    <Compile Include="xNet\~Http\HttpExceptionStatus.cs" />
+    <Compile Include="xNet\~Http\HttpHeader.cs" />
+    <Compile Include="xNet\~Http\HttpMethod.cs" />
+    <Compile Include="xNet\~Http\HttpRequest.cs" />
+    <Compile Include="xNet\~Http\HttpResponse.cs" />
+    <Compile Include="xNet\~Http\HttpStatusCode.cs" />
+    <Compile Include="xNet\~Http\~Content\BytesContent.cs" />
+    <Compile Include="xNet\~Http\~Content\FileContent.cs" />
+    <Compile Include="xNet\~Http\~Content\FormUrlEncodedContent.cs" />
+    <Compile Include="xNet\~Http\~Content\HttpContent.cs" />
+    <Compile Include="xNet\~Http\~Content\MultipartContent.cs" />
+    <Compile Include="xNet\~Http\~Content\StreamContent.cs" />
+    <Compile Include="xNet\~Http\~Content\StringContent.cs" />
+    <Compile Include="xNet\~Http\~Misc\DownloadProgressChangedEventArgs.cs" />
+    <Compile Include="xNet\~Http\~Misc\UploadProgressChangedEventArgs.cs" />
+    <Compile Include="xNet\~Internal\ExceptionHelper.cs" />
+    <Compile Include="xNet\~Internal\ProxyHelper.cs" />
+    <Compile Include="xNet\~Internal\SafeNativeMethods.cs" />
+    <Compile Include="xNet\~Proxy\ChainProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\HttpProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\ProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\ProxyException.cs" />
+    <Compile Include="xNet\~Proxy\ProxyType.cs" />
+    <Compile Include="xNet\~Proxy\Socks4aProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\Socks4ProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\Socks5ProxyClient.cs" />
+    <Compile Include="Item\Pk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\Pk.Designer.cs">
+      <DependentUpon>Pk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Poster.cs" />
+    <Compile Include="PROCESS.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\CheckGroupBox.resx">
+      <DependentUpon>CheckGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ComboPlayer.resx">
+      <DependentUpon>ComboPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\GameInfo.resx">
+      <DependentUpon>GameInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\AutoPK.resx">
+      <DependentUpon>AutoPK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\BinhThanh.resx">
+      <DependentUpon>BinhThanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\CleanTrash.resx">
+      <DependentUpon>CleanTrash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ConfigBossMap.resx">
+      <DependentUpon>ConfigBossMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugEx.resx">
+      <DependentUpon>DebugEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadManager\Protocols\UI\Proxy.resx">
+      <DependentUpon>Proxy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\FastColoredTextBox.resx">
+      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\GoToForm.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\HotkeysEditorForm.resx">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\ReplaceForm.resx">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastMove.resx">
+      <DependentUpon>FastMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\BachBaoCac.resx">
+      <DependentUpon>BachBaoCac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\BoQua - Copy.resx">
+      <DependentUpon>BoQua - Copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\Buff - Copy.resx">
+      <DependentUpon>Buff - Copy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\BuyClone.resx">
+      <DependentUpon>BuyClone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\BuyChucNang.resx">
+      <DependentUpon>BuyChucNang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\CatDoThienCo.resx">
+      <DependentUpon>CatDoThienCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\CatDo.resx">
+      <DependentUpon>CatDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Code.resx">
+      <DependentUpon>Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\FastTask.resx">
+      <DependentUpon>FastTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ConfigBinhThanh.resx">
+      <DependentUpon>ConfigBinhThanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\GameItemForm.resx">
+      <DependentUpon>GameItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\GomItemKNB.resx">
+      <DependentUpon>GomItemKNB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\LayDoThienCo.resx">
+      <DependentUpon>LayDoThienCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\LayDo.resx">
+      <DependentUpon>LayDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\DiChuyen.resx">
+      <DependentUpon>DiChuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\GomItem.resx">
+      <DependentUpon>GomItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alam.resx">
+      <DependentUpon>Alam.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmEx.resx">
+      <DependentUpon>AlarmEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AntiCaptcaManager.resx">
+      <DependentUpon>AntiCaptcaManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AntiCaptcha.resx">
+      <DependentUpon>AntiCaptcha.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\TextEdit.resx">
+      <DependentUpon>TextEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\TuyenChien.resx">
+      <DependentUpon>TuyenChien.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\BoQua.resx">
+      <DependentUpon>BoQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\BuyItem.resx">
+      <DependentUpon>BuyItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\CalendarEx.resx">
+      <DependentUpon>CalendarEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ChatLogs.resx">
+      <DependentUpon>ChatLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AlarmVaoPhai.resx">
+      <DependentUpon>AlarmVaoPhai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\LoginUser.resx">
+      <DependentUpon>LoginUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\TabLogin.resx">
+      <DependentUpon>TabLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\DropItem.resx">
+      <DependentUpon>DropItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterCaptchaContainer.resx">
+      <DependentUpon>EnterCaptchaContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterCaptchaEx.resx">
+      <DependentUpon>EnterCaptchaEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ChiNhat.resx">
+      <DependentUpon>ChiNhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\SellItem - Copy.resx">
+      <DependentUpon>SellItem - Copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\MicroLogin.resx">
+      <DependentUpon>MicroLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module.resx">
+      <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\OnlyAttack.resx">
+      <DependentUpon>OnlyAttack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLite.resx">
+      <DependentUpon>SQLite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\TalkChannel.resx">
+      <DependentUpon>TalkChannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REMELIDEA\Scripts\ScriptManager.resx">
+      <DependentUpon>ScriptManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\SellItem.resx">
+      <DependentUpon>SellItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\UseItem.resx">
+      <DependentUpon>UseItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\TuyetGiao.resx">
+      <DependentUpon>TuyetGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="FastColoredTextBox\SyntaxHighlighter.cs.old" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Item\Publisher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\Publisher.designer.cs">
+      <DependentUpon>Publisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingOld.cs" />
+    <Compile Include="ShutDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShutDown.designer.cs">
+      <DependentUpon>ShutDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GAME\Skill.cs" />
+    <Compile Include="Control\TabControlEx\GdiMemoryContext.cs" />
+    <Compile Include="Control\TabControlEx\NativeMethods.cs" />
+    <Compile Include="Control\TabControlEx\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\TabControlEx\TabControlEx.NativeUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GAME\GameTask.cs" />
+    <Compile Include="GAME\TaskInfo.cs" />
+    <Compile Include="Control\TaskListComparer.cs" />
+    <Compile Include="TDT.cs" />
+    <Compile Include="GAME\TLBB.cs" />
+    <Compile Include="Trader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trader.Designer.cs">
+      <DependentUpon>Trader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User.designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISCII.cs" />
+    <Compile Include="Win.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map4.png" />
+    <None Include="Resources\mapini.txt" />
+    <None Include="Resources\map3.png" />
+    <None Include="Resources\map2.png" />
+    <None Include="Resources\map1.png" />
+    <None Include="Resources\map.png" />
+    <None Include="Resources\exp.png" />
+    <None Include="Resources\mp.png" />
+    <None Include="Resources\hp.png" />
+    <None Include="Resources\mid.png" />
+    <None Include="Resources\left1.png" />
+    <None Include="Resources\left.png" />
+    <None Include="Resources\right.png" />
+    <None Include="Resources\fullexp1.png" />
+    <None Include="Resources\fullexp.png" />
+    <None Include="Resources\emptyexp.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\Publishers.txt" />
+    <None Include="Resources\pm.wav" />
+    <None Include="Resources\chatex.wav" />
+    <None Include="Resources\ChinhTuyen.txt" />
+    <None Include="Resources\captchaIco.ico" />
+    <None Include="Resources\Scripts.xml" />
+    <EmbeddedResource Include="Update.exe" />
+    <None Include="Resources\LuaEx.txt" />
+    <None Include="Resources\Lua.txt" />
+    <None Include="bin\x86\Release\Config\Publishers.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="icon.ico" />
+    <EmbeddedResource Include="Item\Buff.resx">
+      <DependentUpon>Buff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="map.txt" />
+    <None Include="Resources\sound.gif" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\BeriIcon.ico" />
+    <None Include="Resources\Beri.png" />
+    <None Include="Resources\chat.wav" />
+    <None Include="Resources\FixDG.txt" />
+    <EmbeddedResource Include="Item\AutoMap.resx">
+      <DependentUpon>AutoMap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ColorSlider.resx">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\Pk.resx">
+      <DependentUpon>Pk.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\Fix2D.txt" />
+    <None Include="Resources\Fix3D.txt" />
+    <EmbeddedResource Include="Alarm.resx">
+      <DependentUpon>Alarm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loader.resx">
+      <DependentUpon>Loader.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\Publisher.resx">
+      <DependentUpon>Publisher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShutDown.resx">
+      <DependentUpon>ShutDown.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trader.resx">
+      <DependentUpon>Trader.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nier.mp3" />
+    <None Include="Resources\paused.ico" />
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('.\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

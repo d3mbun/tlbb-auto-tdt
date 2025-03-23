@@ -1,0 +1,21 @@
+MISSION = "";
+for iMissionType = 1, 200 do
+	local DeployNum = GetMissionOutlineNum(iMissionType);
+	local nMyLevel = Player:GetData("LEVEL");
+	for i=1, DeployNum do
+		local MissionLevel, MinLevel, MaxLevel, strNpcName, strNpcPos, strScene, strMissionName, PosX, PosY, SceneID = GetMissionOutlineInfo(iMissionType, i);		
+		if(MissionLevel <= nMyLevel and MissionLevel ~= nil and strMissionName ~= nil) then
+			local strInfo = "";
+			strNpcPos = "#{_INFOAIM"..(PosX)..","..(PosY)..","..(SceneID)..","..(strNpcName).."}";
+			if strScene and strScene ~= "" then
+				strInfo = strInfo.."   #G"..strScene.."  #R"..strNpcName..strNpcPos;
+			else
+				strInfo = strInfo.."   #R"..strNpcName..strNpcPos
+			end
+			if strInfo ~= nil then
+				MISSION = MISSION .. '[' .. MissionLevel .. ']' .. ' ' .. strMissionName .. '=' .. strInfo .. ';';
+			end
+		end
+	end
+end
+return ' ' .. MISSION;

@@ -1,0 +1,68 @@
+function AppointLeader(name)
+
+	local count = DataPool:GetTeamMemberCount();
+	
+	local szNick;
+	local iFamily;
+	local iLevel;
+	local bDeadlink;
+	local bDead;
+	local bSex;
+    local sZoneWorldID
+	
+	for i = 0, count - 1 do
+		szNick
+		,iFamily
+		,iLevel
+		,bDead
+		,bDeadlink
+		,bSex
+		,sZoneWorldID
+		= DataPool:GetTeamMemInfoByIndex(i);
+		if szNick == name then
+			Player:AppointLeader(i);
+			break;
+		end
+	end
+	
+end
+
+function XuatPet(id)
+	for i = 1, 10 do 
+		if Pet:IsPresent(i-1)  then
+			strName,strName2,sex = Pet:GetID(i-1);		
+			if strName2 == id then 
+				Pet:Feed(i-1);
+				Pet:Dome(i-1);
+				Pet:Go_Fight(i-1);
+				return;
+			end 
+		end
+	end
+end
+
+
+function MissionInfo(n)	
+	if n == nil then
+		return '0'
+	end
+	cnt = 0;
+	n = string.lower(n);	
+	string.gsub(n, "%s+", "")
+	while true do 
+		local name, content = DataPool:GetPlayerMission_Memo(cnt); 
+		name = string.lower(name);
+		string.gsub(name, "%s+", "")
+		if string.find(name, n) then
+			if DataPool:GetPlayerMission_Variable(cnt, 0) == 1 then 
+				return '1';
+			else
+				return content;
+			end
+		end 
+		cnt = cnt + 1; 
+		if cnt == 20 then 
+			return '0';
+		end 
+	end
+end

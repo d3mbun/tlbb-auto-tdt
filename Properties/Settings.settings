@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MicroAuto.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Fixed" Type="System.Windows.Forms.FixedPanel" Scope="Application">
+      <Value Profile="(Default)">Panel1</Value>
+    </Setting>
+    <Setting Name="ChínhTuyến" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Cô Tô Mộ Dung
+Hoàn Thị Thủy Các
+Độc chiến song hùng
+Đêm dài lắm mộng
+Nhất phẩm đường
+Chỉ Điểm Quần Hào
+Bi Tô Thanh Phong
+Tứ hải là nhà
+Quần Long Vô Thủ
+Cùng Tiến Cùng Lùi
+Thiên hạ võ công xuất Thiếu Lâm
+Tụ Hiền Trang
+Đỉnh thiên lập địa
+Kỳ sau gặp mặt
+Dù vạn người, ta vẫn cứ tiến
+Huyết Chiến Tụ Hiền Trang
+Bảo vệ Mã Phu Nhân
+Nhất Bàn Tản Sa
+Tới núi Thương Mang
+Thiên thời không bằng địa lợi
+Cần Vương
+Bày mưu tính kế
+Tứ Diện Sở Ca
+Kim Qua Đãng Khấu Ngao Binh
+Lục Quân Tị Dịch
+Trân Long Kỳ Hội
+Tịnh hầu quế âm
+Thua thắng thành bại ai biết được
+Chọn ngày tái chiến
+Đóng cửa bắt trộm
+Hội Thi Túc Cầu
+Nhất kiếm thượng thiên sơn
+Dù nguy mà yên
+Y tiếu nhân gian vạn sự
+Cái Bang Nghi Vấn Ban Đầu
+Trừ độc vật giải nguy Cái Bang
+Cùng tiến lên Thiếu Lâm</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

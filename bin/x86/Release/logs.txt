@@ -1,0 +1,204 @@
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 22
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+10:34 08-04 Thoát  -> InezSherman
+10:35 08-04 Thoát  -> InezSherman
+The handle is invalid
+   at System.Diagnostics.NtProcessManager.GetModuleInfos(Int32 processId, Boolean firstModuleOnly)
+   at System.Diagnostics.ProcessManager.GetModuleInfos(Int32 processId)
+   at System.Diagnostics.Process.get_Modules()
+   at MicroAuto.Game.GetRemoteProcAddress(Process targetProcess, String moduleName, String functionName) in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 25502
+   at MicroAuto.Game.HookRecv() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 17310
+   at MicroAuto.Game.ExecRecv() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 34083
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 151
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24069
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Object reference not set to an instance of an object.
+   at MicroAuto.GameObject.get_IsMonter() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObject.cs:line 328
+   at MicroAuto.Game.DefineVar() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 5862
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 150
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Object reference not set to an instance of an object.
+   at MicroAuto.GameObject.get_IsMonter() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObject.cs:line 328
+   at MicroAuto.Game.DefineVar() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 5862
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 150
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+11:18 08-04 Thoát  -> BulXìKe
+11:18 08-04 Thoát  -> zTdsv29
+11:18 08-04 Thoát  -> Tts29
+11:18 08-04 Thoát  -> Qcs29
+11:18 08-04 Thoát  -> Tds29
+11:18 08-04 Thoát  -> nTds29
+11:18 08-04 Thoát  -> Nms29
+11:18 08-04 Thoát  -> nNms29
+11:18 08-04 Thoát  -> zTtsv29
+11:18 08-04 Thoát  -> zQcsv29
+11:18 08-04 Thoát  -> znTdsv29
+11:18 08-04 Thoát  -> zNmsv29
+11:18 08-04 Thoát  -> znNmsv29
+11:46 08-04 Thoát  -> YuQing
+Object reference not set to an instance of an object.
+   at MicroAuto.GameObject.get_IsMonter() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObject.cs:line 311
+   at MicroAuto.Game.DefineVar() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 5862
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 150
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+11:46 08-04 Thoát  -> SHyneMisa
+11:46 08-04 Thoát  -> InezSherman
+11:46 08-04 Thoát  -> HazelBrady
+11:46 08-04 Thoát  -> SylvieMeikle
+11:46 08-04 Thoát  -> AnnieTurner
+Object reference not set to an instance of an object.
+   at MicroAuto.Game.SkillDo() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24436
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 581
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+11:46 08-04 Thoát  -> zHườngHana
+11:46 08-04 Thoát  -> CherylCook
+11:46 08-04 Thoát  -> JuliaManni
+11:46 08-04 Thoát  -> JiqePyle
+11:46 08-04 Thoát  -> SeshaFizhae
+11:46 08-04 Thoát  -> SusanMiller
+11:46 08-04 Thoát  -> zChípHôi
+11:46 08-04 Thoát  -> zĐầuHóiz
+11:46 08-04 Thoát  -> NamBảo
+11:46 08-04 Thoát  -> Mello
+11:46 08-04 Thoát  -> LukeShaw
+Object reference not set to an instance of an object.
+   at MicroAuto.GameObject.get_IsMonter() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObject.cs:line 311
+   at MicroAuto.Game.DefineVar() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 5862
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 150
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+11:46 08-04 Thoát  -> xMinhQuânx
+11:46 08-04 Thoát  -> o0b4byNhj0o
+11:46 08-04 Thoát  -> Hanzimj
+11:46 08-04 Thoát  -> mauvahoahong
+11:46 08-04 Thoát  -> VioletGlass
+11:46 08-04 Thoát  -> ZzHuyenDuczZ
+11:46 08-04 Thoát  -> béThủy
+Object reference not set to an instance of an object.
+   at MicroAuto.Game.get_IsThieuThatSonEx() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 22425
+   at MicroAuto.Game.HoTroPhuBan() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 23150
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 196
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+11:48 08-04 Thoát  -> HuyềnAnh17
+11:48 08-04 Thoát  -> F4
+11:48 08-04 Thoát  -> xTiểuLong
+11:48 08-04 Thoát  -> Ngáo
+11:48 08-04 Thoát  -> HoaHồngGai
+11:48 08-04 Thoát  -> LouisCrie
+11:48 08-04 Thoát  -> xTuyệThếx
+11:52 08-04 Thoát  -> P005
+11:52 08-04 Thoát  -> BòTái
+Thread was being aborted.
+   at MicroAuto.GameObjects.Read() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObjects.cs:line 497
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 97
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Thread was being aborted.
+   at MicroAuto.Memory.ReadProcessMemory(IntPtr hProcess, UInt32 lpBaseAddress, Byte[] lpBuffer, Int32 dwSize, Int32 lpNumberOfBytesRead)
+   at MicroAuto.Memory.Read(UInt32[] offsets) in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\Memory.cs:line 787
+   at MicroAuto.TLBB.get_Name() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\TLBB.cs:line 96
+   at MicroAuto.TLBB.get_Online() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\TLBB.cs:line 998
+   at MicroAuto.Main.<>c.<get_AllOnelineGame>b__260_1(Game g) in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\Main.cs:line 4907
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at MicroAuto.Main.get_AllOnelineGame() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\Main.cs:line 4907
+   at MicroAuto.Game.get_Party() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 32941
+   at MicroAuto.Game.get_Leader() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 32971
+   at MicroAuto.Game.SkillDo() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 24436
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 581
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Thread was being aborted.
+   at MicroAuto.GameObjects.Read() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObjects.cs:line 497
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 97
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Thread was being aborted.
+   at MicroAuto.GameObjects.Read() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObjects.cs:line 497
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 97
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461
+Thread was being aborted.
+   at MicroAuto.GameObjects.Read() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\GameObjects.cs:line 497
+   at MicroAuto.Game.Auto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Auto.cs:line 97
+   at MicroAuto.Game.FuncAuto() in D:\MicroAuto Lastest Version_9_6\MicroAuto Lastest Version\MicroAuto\GAME\Game.cs:line 1461

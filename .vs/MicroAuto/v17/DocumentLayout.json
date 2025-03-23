@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MicroAuto-source\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|d:\\microauto-source\\debugex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|solutionrelative:debugex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|d:\\microauto-source\\anticaptcamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|solutionrelative:anticaptcamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|d:\\microauto-source\\anticaptcha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|solutionrelative:anticaptcha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|d:\\microauto-source\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|solutionrelative:properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|d:\\microauto-source\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{420B604B-2EB5-4492-BACE-D73878C6B1B6}|MicroAuto.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AntiCaptcha.Designer.cs",
+              "DocumentMoniker": "D:\\MicroAuto-source\\AntiCaptcha.Designer.cs",
+              "RelativeDocumentMoniker": "AntiCaptcha.Designer.cs",
+              "ToolTip": "D:\\MicroAuto-source\\AntiCaptcha.Designer.cs",
+              "RelativeToolTip": "AntiCaptcha.Designer.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAD4vy4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T15:27:41.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AntiCaptcaManager.cs",
+              "DocumentMoniker": "D:\\MicroAuto-source\\AntiCaptcaManager.cs",
+              "RelativeDocumentMoniker": "AntiCaptcaManager.cs",
+              "ToolTip": "D:\\MicroAuto-source\\AntiCaptcaManager.cs",
+              "RelativeToolTip": "AntiCaptcaManager.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAIA/wE0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T15:26:57.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\MicroAuto-source\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "D:\\MicroAuto-source\\User.cs",
+              "RelativeToolTip": "User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T15:25:11.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "D:\\MicroAuto-source\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "Properties\\Resources.Designer.cs",
+              "ToolTip": "D:\\MicroAuto-source\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T15:24:42.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DebugEx.cs",
+              "DocumentMoniker": "D:\\MicroAuto-source\\DebugEx.cs",
+              "RelativeDocumentMoniker": "DebugEx.cs",
+              "ToolTip": "D:\\MicroAuto-source\\DebugEx.cs",
+              "RelativeToolTip": "DebugEx.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAtwE0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T15:20:59.87Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1042 @@
+function Quest_Open()
+	this:Show();
+	
+	NpcName = Target:GetDialogNpcName();
+	MapID = GetSceneID();
+	
+	if string.find(NpcName, 'Mô Kim Hi®u Úy') then 
+		QuestFrameOptionClicked(-1, 50063, 100); 
+	end
+	
+	if string.find(NpcName, 'Ác T£c TÕo Phän') then
+	   if MapID == 3 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 4 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 5 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 6 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 7 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 8 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		end
+	end
+	
+	if string.find(NpcName, 'Thiªu Lâm Vân Du Võ Tång') then
+	   if MapID == 18 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 24 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 30 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 272 then
+			QuestFrameOptionClicked(-1, 402108, 1);
+		end
+	end
+	
+	if string.find(NpcName, 'Giang h° tiêu ti¬u') or string.find(NpcName, 'Giang h° tà ðÕo') then
+		if MapID == 9then
+			QuestFrameOptionClicked(-1, 808027, 0);
+		elseif MapID == 10 then
+			QuestFrameOptionClicked(-1, 808032, 0);
+		elseif MapID == 11 then
+			QuestFrameOptionClicked(-1, 808031, 0);
+		elseif MapID == 12 then
+			QuestFrameOptionClicked(-1, 808033, 0);
+		elseif MapID == 13 then
+			QuestFrameOptionClicked(-1, 808029, 0);
+		elseif MapID == 14 then
+			QuestFrameOptionClicked(-1, 808016, 0);
+		elseif MapID == 15 then
+			QuestFrameOptionClicked(-1, 808034, 0);
+		elseif MapID == 16 then
+			QuestFrameOptionClicked(-1, 808028, 0);
+		elseif MapID == 17 then
+			QuestFrameOptionClicked(-1, 808030, 0);
+		elseif MapID == 284 then
+			QuestFrameOptionClicked(-1, 808043, 0);
+		end
+	end
+	
+	if (string.find(NpcName, 'Ðinh Ðinh') or string.find(NpcName, 'Ðông Ðông')) and MapID == 0 then
+		QuestFrameOptionClicked(-1, 800116, 2);
+	end
+	
+	if string.find(NpcName, 'MÕnh Bà') then
+		if MapID == 77 then
+			QuestFrameOptionClicked(-1, 77001, 0)
+		end
+		if MapID == 578 then
+			QuestFrameOptionClicked(-1, 77001, 0)
+		end
+	end		
+	
+	if string.find(NpcName, 'Long Bá Thiên') then
+		if MapID == 0 or MapID == 242 then
+			QuestFrameOptionClicked(-1,129,0);
+			QuestFrameOptionClicked(-1,129,1001);			
+		end
+	end
+	
+	if AutoTN == '@go' or AutoTN == '@bk' then		
+		if (string.find(NpcName, 'Hill') ~= nil or string.find(NpcName, 'Capt') ~= nil) and QClickThanhMinh ~= nil then			
+			if MapID == ArrMap[1] then
+				QuestFrameOptionClicked(-1, QClickThanhMinh[1], QClickThanhMinh[2])
+			elseif MapID == ArrMap[table.getn(ArrMap)] then
+				QuestFrameOptionClicked(-1, QClickThanhTT[1], QClickThanhTT[2])
+			end
+		end
+		
+		if string.find(NpcName, 'Officer Chien') then
+			if AutoTN == '@go' then
+				AutoTN = 'go'
+			end
+			if AutoTN == '@bk' then
+				AutoTN = 'bk'
+			end
+			QuestFrameOptionClicked(-1, 805012, 5)
+		end
+	end
+end
+
+function QuestOption_Clicked()
+	pos1,pos2 = string.find(arg0,"#");
+	pos3,pos4 = string.find(arg0,",");
+	local strOptionID = -1;
+	local strOptionExtra1 = string.sub(arg0, pos2+1,pos3-1 );
+	local strOptionExtra2 = string.sub(arg0, pos4+1);
+	if( (Player:InTeamFollowMode() == true) and
+			(Player:IsLeader() ~= 1) and
+			(tonumber(strOptionExtra2) ~= -1) and
+			(tonumber(strOptionExtra1) == 806008)) then
+			PushDebugMessage("#{GMAI_MySelf_27}");
+		return
+	end
+	QuestFrameOptionClicked(tonumber(strOptionID),tonumber(strOptionExtra1),tonumber(strOptionExtra2));
+	PushDebugMessage('Click: '..strOptionExtra1..' | '..strOptionExtra2)	
+end
+
+function DebugListBox_Update(arg0)
+	max_size = 400;
+	this:Show();
+	local str;
+	AxTrace(0,5,"listbox = " .. arg0)
+	local fontcolor,extencolor;
+	fontcolor,extencolor = DataPool:GetUIColor(1000);	
+	if(fontcolor == "-1") then
+		fontcolor = "00FFFF";
+	end
+	if(extencolor == "-1") then
+		extencolor = "010101";
+	end	
+	if(string.len(arg0) > max_size) then
+		if(DataPool:Check_StringCode(string.sub(arg0,1,max_size)) == 0) then
+				str = string.sub(arg0,1,max_size-1);
+				AxTrace(0,1,"Error str = "..str)
+		else
+				str = string.sub(arg0,1,max_size);
+				AxTrace(0,1,"Right str = "..str)
+		end		
+		DebugListBox_ListBox:AddInfo( "#c"..fontcolor .. "#e" .. extencolor .. str );
+		return;
+	end
+	DebugListBox_ListBox:AddInfo( "#c"..fontcolor.."#e" .. extencolor .. arg0 );
+	if arg0 ~= nil then
+		if string.find(arg0, "Reached check limit") or  string.find(arg0, "You do not have enough") or string.find(arg0, "You don't have enough room") or string.find(arg0, 'Vàng bÕc ngân phiªu không ðü, không th¬ mua tiªp!') or string.find(arg0, 'Vàng bÕc ngân phiªu ðã ðÕt ngßÞng, không th¬ mua thêm') or string.find(arg0, 'Tay näi ðã ð¥y, không th¬ mua ðßþc!')  or string.find(arg0, 'Ngân Phiªu không ðü, không th¬ mua næa!') or string.find(arg0, 'Túi ðã ð¥y, không th¬ mua!')  or string.find(arg0, 'Ngân Phiªu ðã ðÕt gi¾i hÕn, không th¬ mua næa.') then
+			if EmptyHand == nil then
+				EmptyHand = 1;
+			else
+				EmptyHand = EmptyHand + 1;
+			end			
+		end
+	end	
+end
+
+function AutoSearch_Open()
+	InputPosition_x:SetText("");
+	InputPosition_y:SetText("");
+	if ( true == AutoSearch_UpdateFrame(1) ) then
+		AutoSearch_Tab1:SetCheck(1);
+		this:Show();
+	else
+		this:Show();
+	end
+	if AutoTN == '@go' or AutoTN == '@bk' then
+		MapID = GetSceneID();
+		if MapID == 242 then MapID = 0 end
+		CurIndex = nil;
+		xNow,yNow = Player:GetPos();
+		if MapID > 500 then
+			if MapID == IdThanhMinh or MapID == IdThanhTT then
+				if (AutoTN == '@go' and MapID == IdThanhMinh) or (AutoTN == '@bk' and MapID == IdThanhTT) then
+					AutoRunToTarget(100 ,160);
+				elseif (AutoTN == '@bk' and MapID == IdThanhMinh) or (AutoTN == '@go' and MapID == IdThanhTT) then					
+					xNow,yNow = Player:GetPos();
+					if xNow == 148 and yNow == 56 then
+						SetAutoRunTargetNPCName('Officer Chien');
+					else
+						AutoRunToTarget(148,56);
+					end
+				end
+				this:Hide();
+				return
+			else
+				PushDebugMessage('You are not in move path');
+				AutoTN = '@st';
+			end
+		end
+		if ArrMapLen == nil then
+			PushDebugMessage('You are not in move path');
+			AutoTN = '@st';
+			return
+		end
+		if AutoTN == '@go'then
+			for i = 1,ArrMapLen do
+				if ArrMap[i] == MapID then
+					CurIndex = ArrGo[i];
+					break;
+				end
+			end
+		end
+		if AutoTN == '@bk' then
+			for i = 1,ArrMapLen do
+				if ArrMap[i] == MapID then
+					CurIndex = ArrBk[ArrMapLen - i + 1];
+					break;
+				end
+			end
+		end
+		if CurIndex ~= nil then
+			MyCopyPosition(CurIndex);
+			MyAutoMoveTo(CurIndex);
+			this:Hide();
+		else
+			PushDebugMessage('You are not in move path');
+			AutoTN = '@st';
+		end
+	end
+end
+function MyCopyPosition(index)
+	local nStart, nEnd = DataPool:GetAutoSearchSceneStartEnd(GetSceneID());
+	if nStart == -1 then
+		return false;
+	end	
+	local tblPriority = {};
+	local TabListDataTablePtr = {};	
+	local nCount = nEnd - nStart + 1;	
+	local k = 1;
+	for i=nStart, nEnd do
+		tblPriority[k] = {};
+		tblPriority[k].id = i;
+		tblPriority[k].pri = DataPool:GetAutoSearchPriority(i);
+		k = k + 1;
+	end
+	local temp1,temp2;
+	for m=nCount, 1, -1 do
+		for n=m-1, 1, -1 do
+			if tblPriority[m].pri >= tblPriority[n].pri then
+				temp1 = tblPriority[m].id;
+				temp2 = tblPriority[m].pri;
+				tblPriority[m].id = tblPriority[n].id;
+				tblPriority[m].pri = tblPriority[n].pri;
+				tblPriority[n].id = temp1;
+				tblPriority[n].pri = temp2;
+			end
+		end
+	end
+	local x, y, name, tooltips, info, tabtype;
+	k = 1;
+	for i=1, nCount do
+		x, y, name, tooltips, info, tabtype = DataPool:GetAutoSearch(tblPriority[nCount-i+1].id);
+		TabListDataTablePtr[k] = {};
+		TabListDataTablePtr[k].ID = tblPriority[nCount-i+1].id;
+		TabListDataTablePtr[k].nPosX = x;
+		TabListDataTablePtr[k].nPosY = y;
+		TabListDataTablePtr[k].strName = name;
+		TabListDataTablePtr[k].strToolTips = tooltips;
+		TabListDataTablePtr[k].strInfo = info;			
+		k = k + 1;
+	end
+	if not TabListDataTablePtr then
+		return
+	end
+	local nSelIndex = tonumber(index)
+	if nSelIndex < 0 then
+		return;
+	end
+	local strPosX = tostring(TabListDataTablePtr[nSelIndex].nPosX);
+	local strPosY = tostring(TabListDataTablePtr[nSelIndex].nPosY);
+	InputPosition_x:SetText(strPosX); InputPosition_y:SetText(strPosY);
+end
+function MyAutoMoveTo(index)	
+	local TabListDataTablePtr = {};
+	local tblPriority = {};
+	local nStart, nEnd = DataPool:GetAutoSearchSceneStartEnd(GetSceneID());
+	if nStart == -1 then
+		return false;
+	end		
+	local nCount = nEnd - nStart + 1;	
+	local k = 1;
+	for i=nStart, nEnd do
+		tblPriority[k] = {};
+		tblPriority[k].id = i;
+		tblPriority[k].pri = DataPool:GetAutoSearchPriority(i);
+		k = k + 1;
+	end
+	local temp1,temp2;
+	for m=nCount, 1, -1 do
+		for n=m-1, 1, -1 do
+			if tblPriority[m].pri >= tblPriority[n].pri then
+				temp1 = tblPriority[m].id;
+				temp2 = tblPriority[m].pri;
+				tblPriority[m].id = tblPriority[n].id;
+				tblPriority[m].pri = tblPriority[n].pri;
+				tblPriority[n].id = temp1;
+				tblPriority[n].pri = temp2;
+			end
+		end
+	end
+	local curTabType = TabIndex2TabType(0);
+	local x, y, name, tooltips, info, tabtype;
+	k = 1;
+	for i=1, nCount do
+		x, y, name, tooltips, info, tabtype = DataPool:GetAutoSearch(tblPriority[nCount-i+1].id);
+		TabListDataTablePtr[k] = {};
+		TabListDataTablePtr[k].ID = tblPriority[nCount-i+1].id;
+		TabListDataTablePtr[k].nPosX = x;
+		TabListDataTablePtr[k].nPosY = y;
+		TabListDataTablePtr[k].strName = name;
+		TabListDataTablePtr[k].strToolTips = tooltips;
+		TabListDataTablePtr[k].strInfo = info;			
+		k = k + 1;
+	end
+	if not TabListDataTablePtr then
+		return
+	end
+	
+	local nPosX = tonumber(InputPosition_x:GetText());
+	local nPosY = tonumber(InputPosition_y:GetText());
+	if not nPosX or nPosX <= 0 or not nPosY or nPosY <= 0 then
+		return
+	end	
+	local str = GetDictionaryString('ZDXL_90520_2');	
+	AutoSearchTargetFlashPos(nPosX,nPosY,str);
+	
+	if TabListDataTablePtr then
+		local nSelIndex = tonumber(index);
+		if nSelIndex >= 0 then
+			if TabListDataTablePtr[nSelIndex].nPosX == nPosX and TabListDataTablePtr[nSelIndex].nPosY == nPosY then
+				local curSceneID = GetSceneID();
+				SetAutoRunTargetNPCName(TabListDataTablePtr[nSelIndex].strName);
+				AutoSearchTargetFlashPos(nPosX,nPosY,TabListDataTablePtr[nSelIndex].strName);
+			end
+		end
+	end
+	local ret = AutoRunToTarget(nPosX,nPosY);
+	if ret == 0 then
+		PushDebugMessage('#{ZDXL_90520_3}')
+	end
+end
+function SetWay()
+	IsBuyMax = true;
+	if string.sub(WAY,1,4) == '@way' then
+		local cnt = 0;
+		for _,w in pairs(Split(WAY,',')) do
+			cnt = cnt + 1
+		end
+		if cnt == 11 then
+			PushDebugMessage('WAY Config');
+			ArrMap = {};
+			ArrGo = {};
+			ArrBk = {};
+			ChuaTimThay = true;
+			local way = Split(WAY,',');
+			MapDen = way[3];
+			TimDuongDi(way[2]);
+			TimIndexs();
+			table.insert(ArrBk,way[4]);
+			table.insert(ArrGo,way[5]);
+			IdThanhMinh = tonumber(way[6]);
+			IdThanhTT = tonumber(way[7]);
+			QClickThanhMinh = {tonumber(way[8]),tonumber(way[9])};
+			QClickThanhTT = {tonumber(way[10]),tonumber(way[11])};
+		end
+	end
+end
+function Split(str,delim,maxNb) if string.find(str,delim) == nil then return {str} end if maxNb == nil or maxNb < 1 then maxNb = 0 end local result = {} local pat = '(.-)' .. delim .. '()'; local nb = 0; local lastPos; for part,pos in string.gfind(str,pat) do nb = nb + 1; result[nb] = part; lastPos = pos; if nb == maxNb then break end end if nb ~= maxNb then result[nb + 1] = string.sub(str,lastPos) end return result end
+function ChuaDiQua(map) for _,value in pairs(ArrMap) do if value == map then return false end end return true end
+function TimDuongDi(maphientai) table.insert(ArrMap,maphientai); if MapDen == maphientai then ChuaTimThay = false; return; end if maphientai == 'daily' then if ChuaDiQua('nhihai') and ChuaTimThay then TimDuongDi('nhihai') end if ChuaDiQua('kiemcac') and ChuaTimThay then TimDuongDi('kiemcac') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'nhihai' then if ChuaDiQua('daily') and ChuaTimThay then TimDuongDi('daily') end if ChuaDiQua('thuongson') and ChuaTimThay then TimDuongDi('thuongson') end if ChuaDiQua('thachlam') and ChuaTimThay then TimDuongDi('thachlam') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'thuongson' then if ChuaDiQua('nhihai') and ChuaTimThay then TimDuongDi('nhihai') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'thachlam' then if ChuaDiQua('nhihai') and ChuaTimThay then TimDuongDi('nhihai') end if ChuaDiQua('ngockhue') and ChuaTimThay then TimDuongDi('ngockhue') end if ChuaDiQua('namchieu') and ChuaTimThay then TimDuongDi('namchieu') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'ngockhue' then if ChuaDiQua('thachlam') and ChuaTimThay then TimDuongDi('thachlam') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'namchieu' then if ChuaDiQua('thachlam') and ChuaTimThay then TimDuongDi('thachlam') end if ChuaDiQua('mieucuong') and ChuaTimThay then TimDuongDi('mieucuong') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'mieucuong' then if ChuaDiQua('namchieu') and ChuaTimThay then TimDuongDi('namchieu') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'kiemcac' then if ChuaDiQua('daily') and ChuaTimThay then TimDuongDi('daily') end if ChuaDiQua('donhoang') and ChuaTimThay then TimDuongDi('donhoang') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'donhoang' then if ChuaDiQua('kiemcac') and ChuaTimThay then TimDuongDi('kiemcac') end if ChuaDiQua('lacduong') and ChuaTimThay then TimDuongDi('lacduong') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'lacduong' then if ChuaDiQua('donhoang') and ChuaTimThay then TimDuongDi('donhoang') end if ChuaDiQua('nhannam') and ChuaTimThay then TimDuongDi('nhannam') end if ChuaDiQua('tungson') and ChuaTimThay then TimDuongDi('tungson') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'nhannam' then if ChuaDiQua('lacduong') and ChuaTimThay then TimDuongDi('lacduong') end if ChuaDiQua('nhanbac') and ChuaTimThay then TimDuongDi('nhanbac') end if ChuaDiQua('thaonguyen') and ChuaTimThay then TimDuongDi('thaonguyen') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'nhanbac' then if ChuaDiQua('nhannam') and ChuaTimThay then TimDuongDi('nhannam') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'thaonguyen' then if ChuaDiQua('lieutay') and ChuaTimThay then TimDuongDi('lieutay') end if ChuaDiQua('nhannam') and ChuaTimThay then TimDuongDi('nhannam') end if ChuaDiQua('truongbachson') and ChuaTimThay then TimDuongDi('truongbachson') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'lieutay' then if ChuaDiQua('thaonguyen') and ChuaTimThay then TimDuongDi('thaonguyen') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'truongbachson' then if ChuaDiQua('thaonguyen') and ChuaTimThay then TimDuongDi('thaonguyen') end if ChuaDiQua('hoanglongphu') and ChuaTimThay then TimDuongDi('hoanglongphu') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'hoanglongphu' then if ChuaDiQua('truongbachson') and ChuaTimThay then TimDuongDi('truongbachson') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'tungson' then if ChuaDiQua('lacduong') and ChuaTimThay then TimDuongDi('lacduong') end if ChuaDiQua('thaiho') and ChuaTimThay then TimDuongDi('thaiho') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'thaiho' then if ChuaDiQua('tungson') and ChuaTimThay then TimDuongDi('tungson') end if ChuaDiQua('tochau') and ChuaTimThay then TimDuongDi('tochau') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'tochau' then if ChuaDiQua('thaiho') and ChuaTimThay then TimDuongDi('thaiho') end if ChuaDiQua('tayho') and ChuaTimThay then TimDuongDi('tayho') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'tayho' then if ChuaDiQua('tochau') and ChuaTimThay then TimDuongDi('tochau') end if ChuaDiQua('longtuyen') and ChuaTimThay then TimDuongDi('longtuyen') end if ChuaDiQua('vodi') and ChuaTimThay then TimDuongDi('vodi') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'longtuyen' then if ChuaDiQua('tayho') and ChuaTimThay then TimDuongDi('tayho') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'vodi' then if ChuaDiQua('tayho') and ChuaTimThay then TimDuongDi('tayho') end if ChuaDiQua('mailinh') and ChuaTimThay then TimDuongDi('mailinh') end if ChuaDiQua('namhai') and ChuaTimThay then TimDuongDi('namhai') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'mailinh' then if ChuaDiQua('vodi') and ChuaTimThay then TimDuongDi('vodi') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'namhai' then if ChuaDiQua('quynhchau') and ChuaTimThay then TimDuongDi('quynhchau') end if ChuaDiQua('vodi') and ChuaTimThay then TimDuongDi('vodi') end if ChuaTimThay then table.remove(ArrMap) end elseif maphientai == 'quynhchau' then if ChuaDiQua('namhai') and ChuaTimThay then TimDuongDi('namhai') end if ChuaTimThay then table.remove(ArrMap) end end end
+function TimIndex(maphientai,maptieptheo) 
+	if maphientai == 'daily' then 
+		if maptieptheo == 'nhihai' 
+			then return 3 
+		end 
+		if maptieptheo == 'kiemcac' 
+			then return 4 
+		end 
+	end 
+	if maphientai == 'nhihai' then 
+		if maptieptheo == 'daily' 
+			then return 2
+		end 
+		if maptieptheo == 'thachlam' 
+			then return 3 
+		end 
+		if maptieptheo == 'thuongson' then 
+			return 1 
+		end 
+	end 
+	if maphientai == 'thuongson' then 
+		if maptieptheo == 'nhihai' then 
+			return 1 
+		end 
+	end 
+	if maphientai == 'thachlam' then 
+		if maptieptheo == 'nhihai' then 
+			return 1 
+		end 
+		if maptieptheo == 'ngockhue' then 
+			return 5 
+		end 
+		if maptieptheo == 'namchieu' then 
+			return 2 
+		end 
+	end 
+	if maphientai == 'ngockhue' then 
+		if maptieptheo == 'thachlam' then 
+			return 1 
+		end 
+	end 
+	if maphientai == 'namchieu' then 
+		if maptieptheo == 'thachlam' then 
+			return 2 
+		end 
+		if maptieptheo == 'mieucuong' then 
+			return 1 
+		end 
+	end if maphientai == 'mieucuong' then 
+		if maptieptheo == 'namchieu' then 
+			return 1 
+		end 
+	end if maphientai == 'kiemcac' then 
+		if maptieptheo == 'daily' then 
+			return 2 
+		end 
+		if maptieptheo == 'donhoang' then 
+			return 3 
+		end 
+	end if maphientai == 'donhoang' then 
+		if maptieptheo == 'kiemcac' then 
+			return 2 
+		end 
+		if maptieptheo == 'lacduong' then 
+			return 3 
+		end 
+	end if maphientai == 'lacduong' then 
+		if maptieptheo == 'donhoang' then 
+			return 4 
+		end 
+		if maptieptheo == 'nhannam' then 
+			return 6 
+		end 
+		if maptieptheo == 'tungson' then 
+			return 5 
+		end 
+	end 
+	if maphientai == 'nhannam' then 
+		if maptieptheo == 'lacduong' then 
+			return 2 
+		end 
+		if maptieptheo == 'nhanbac' then 
+			return 4 
+		end 
+		if maptieptheo == 'thaonguyen' then 
+			return 1 
+		end 
+	end 
+	if maphientai == 'nhanbac' then 
+		if maptieptheo == 'nhannam' then 
+			return 3 
+		end 
+	end 
+	if maphientai == 'thaonguyen' then 
+		if maptieptheo == 'lieutay' then 
+			return 2 
+		end 
+		if maptieptheo == 'nhannam' then 
+			return 4 
+		end 
+		if maptieptheo == 'truongbachson' then 
+			return 1 
+		end 
+	end if maphientai == 'lieutay' then 
+		if maptieptheo == 'thaonguyen' then 
+			return 1 
+		end 
+	end 
+	if maphientai == 'truongbachson' then 
+		if maptieptheo == 'thaonguyen' then 
+			return 1 
+		end 
+		if maptieptheo == 'hoanglongphu' then 
+			return 2 
+		end 
+	end if maphientai == 'hoanglongphu' then 
+		if maptieptheo == 'truongbachson' then 
+			return 1 
+		end 
+	end if maphientai == 'tungson' then 
+		if maptieptheo == 'lacduong' then 
+			return 1 
+		end 
+		if maptieptheo == 'thaiho' then 
+			return 3 
+		end 
+	end if maphientai == 'thaiho' then 
+		if maptieptheo == 'tungson' then 
+			return 3 
+		end 
+		if maptieptheo == 'tochau' then 
+			return 4 
+		end 
+	end 
+	if maphientai == 'tochau' then 
+		if maptieptheo == 'tayho' then 
+			return 6 
+		end 
+		if maptieptheo == 'thaiho' then 
+			return 5 
+		end 
+	end if maphientai == 'tayho' then 
+		if maptieptheo == 'tochau' then 
+			return 3 
+		end 
+		if maptieptheo == 'longtuyen' then 
+			return 1 
+		end 
+		if maptieptheo == 'vodi' then 
+			return 4 
+		end 
+	end 
+	if maphientai == 'longtuyen' then 
+		if maptieptheo == 'tayho' then 
+			return 2 
+		end 
+	end 
+	if maphientai == 'vodi' then 
+		if maptieptheo == 'tayho' then 
+			return 4 
+		end 
+		if maptieptheo == 'mailinh' then 
+			return 2 
+		end 
+		if maptieptheo == 'namhai' then 
+			return 3 
+		end 
+	end 
+	if maphientai == 'mailinh' then 
+		if maptieptheo == 'vodi' then 
+			return 2 
+		end 
+	end 
+	if maphientai == 'namhai' then 
+		if maptieptheo == 'vodi' then 
+			return 3 
+		end 
+		if maptieptheo == 'quynhchau' then 
+			return 2 
+		end 
+	end 
+	if maphientai == 'quynhchau' then 
+		if maptieptheo == 'namhai' then 
+			return 1 
+		end 
+	end 
+end
+function TimIndexs() ArrMapLen = table.getn(ArrMap); for i = 1,ArrMapLen do if ArrMap[i + 1] ~= nil then table.insert(ArrGo,TimIndex(ArrMap[i],ArrMap[i + 1])); end if ArrMap[ArrMapLen - i] ~= nil then table.insert(ArrBk,TimIndex(ArrMap[ArrMapLen - i + 1],ArrMap[ArrMapLen - i])); end end for i = 1,ArrMapLen do ArrMap[i] = MapToNumber(ArrMap[i]); end end
+function MapToNumber(mapname) if mapname == 'lacduong' then return 0 end if mapname == 'tochau' then return 1 end if mapname == 'daily' then return 2 end if mapname == 'tungson' then return 3 end if mapname == 'thaiho' then return 4 end if mapname == 'kiemcac' then return 7 end if mapname == 'donhoang' then return 8 end if mapname == 'nhannam' then return 18 end if mapname == 'nhanbac' then return 19 end if mapname == 'thaonguyen' then return 20 end if mapname == 'lieutay' then return 21 end if mapname == 'truongbachson' then return 22 end if mapname == 'hoanglongphu' then return 23 end if mapname == 'nhihai' then return 24 end if mapname == 'thuongson' then return 25 end if mapname == 'thachlam' then return 26 end if mapname == 'ngockhue' then return 27 end if mapname == 'namchieu' then return 28 end if mapname == 'mieucuong' then return 29 end if mapname == 'tayho' then return 30 end if mapname == 'longtuyen' then return 31 end if mapname == 'vodi' then return 32 end if mapname == 'mailinh' then return 33 end if mapname == 'namhai' then return 34 end if mapname == 'quynhchau' then return 35 end return -1 end
+function MapToString(mapid) if mapid == 0 then return 'lacduong' end if mapid == 1 then return 'tochau' end if mapid == 2 then return 'daily' end if mapid == 3 then return 'tungson' end if mapid == 4 then return 'thaiho' end if mapid == 7 then return 'kiemcac' end if mapid == 8 then return 'donhoang' end if mapid == 18 then return 'nhannam' end if mapid == 19 then return 'nhanbac' end if mapid == 20 then return 'thaonguyen' end if mapid == 21 then return 'lieutay' end if mapid == 22 then return 'truongbachson' end if mapid == 23 then return 'hoanglongphu' end if mapid == 24 then return 'nhihai' end if mapid == 25 then return 'thuongson' end if mapid == 26 then return 'thachlam' end if mapid == 27 then return 'ngockhue' end if mapid == 28 then return 'namchieu' end if mapid == 29 then return 'mieucuong' end if mapid == 30 then return 'tayho' end if mapid == 31 then return 'longtuyen' end if mapid == 32 then return 'vodi' end if mapid == 33 then return 'mailinh' end if mapid == 34 then return 'namhai' end if mapid == 35 then return 'quynhchau' end return 'khongbiet' end
+function City_Shop_Update_CurPage()
+	IsMax = 0;
+	IndexBuy = -1;
+	MinIndexBuy = -1;
+	PriceBuy = 0;
+	MinPriceBuy = 50000;
+	
+	City_Shop_Act_Clear();
+	local i = 1;
+	while i <= 12 do
+		City_Shop_Act_Set(i);
+		i = i + 1;
+	end
+	City_Shop_BtnSet();
+	
+	if IsMax == 0 then
+		if AutoTN == 'go' or AutoTN == 'bk' then
+			QuestFrameOptionClicked(-1, 805012, 5)
+		elseif AutoTN == 'gosell' then
+			AutoTN = 'go'
+			QuestFrameOptionClicked(-1, 805012, 5) 			
+		elseif AutoTN == 'bksell' then
+			AutoTN = 'bk'
+			QuestFrameOptionClicked(-1, 805012, 5) 			
+		end
+	else
+		if AutoTN == 'go' then AutoTN = 'gosell' end
+		if AutoTN == 'bk' then AutoTN = 'bksell' end
+	end
+	
+	if AutoTN == 'gobuy' or AutoTN == 'bkbuy' then
+		if EmptyHand == nil then EmptyHand = 0 end
+		if EmptyHand > 0 then
+			if MinIndexBuy ~= -1 and IsBuyMax then		
+				if not StopBuy then
+					City_Shop_Act_Clicked(MinIndexBuy);
+				end
+				QuestFrameOptionClicked(-1, 805012, 5);
+			else
+				EmptyHand = EmptyHand + 1;
+			end
+			if EmptyHand > 1 then
+				if AutoTN == 'gobuy' then AutoTN = '@bk' end
+				if AutoTN == 'bkbuy' then AutoTN = '@go' end	
+				xNow, yNow = Player:GetPos();
+				AutoRunToTarget(xNow - 1, yNow + 1);
+			end
+		elseif IndexBuy ~= -1 then
+			if not StopBuy then
+				City_Shop_Act_Clicked(IndexBuy);
+			end
+			QuestFrameOptionClicked(-1, 805012, 5);
+		else
+			QuestFrameOptionClicked(-1, 805012, 5);
+		end
+	end
+end
+function City_Shop_Act_Set(i)
+	g_MembersCtl = { {act = CityShop_Item1, money = CityShop_ItemInfo1_Price, txt = CityShop_ItemInfo1_Text, mtxt = CityShop_ItemInfo1_GB}, {act = CityShop_Item2, money = CityShop_ItemInfo2_Price, txt = CityShop_ItemInfo2_Text, mtxt = CityShop_ItemInfo2_GB}, {act = CityShop_Item3, money = CityShop_ItemInfo3_Price, txt = CityShop_ItemInfo3_Text, mtxt = CityShop_ItemInfo3_GB}, {act = CityShop_Item4, money = CityShop_ItemInfo4_Price, txt = CityShop_ItemInfo4_Text, mtxt = CityShop_ItemInfo4_GB}, {act = CityShop_Item5, money = CityShop_ItemInfo5_Price, txt = CityShop_ItemInfo5_Text, mtxt = CityShop_ItemInfo5_GB}, {act = CityShop_Item6, money = CityShop_ItemInfo6_Price, txt = CityShop_ItemInfo6_Text, mtxt = CityShop_ItemInfo6_GB}, {act = CityShop_Item7, money = CityShop_ItemInfo7_Price, txt = CityShop_ItemInfo7_Text, mtxt = CityShop_ItemInfo7_GB}, {act = CityShop_Item8, money = CityShop_ItemInfo8_Price, txt = CityShop_ItemInfo8_Text, mtxt = CityShop_ItemInfo8_GB}, {act = CityShop_Item9, money = CityShop_ItemInfo9_Price, txt = CityShop_ItemInfo9_Text, mtxt = CityShop_ItemInfo9_GB}, {act = CityShop_Item10, money = CityShop_ItemInfo10_Price, txt = CityShop_ItemInfo10_Text, mtxt = CityShop_ItemInfo10_GB}, {act = CityShop_Item11, money = CityShop_ItemInfo11_Price, txt = CityShop_ItemInfo11_Text, mtxt = CityShop_ItemInfo11_GB}, {act = CityShop_Item12, money = CityShop_ItemInfo12_Price, txt = CityShop_ItemInfo12_Text, mtxt = CityShop_ItemInfo12_GB}, prv = CityShop_UpPage, nxt = CityShop_DownPage, ptxt = CityShop_CurrentlyPage, };
+	local g_CurPage = 1;
+	local theAction, isSoldOut = City:EnumCityShop((g_CurPage-1)*12+(tonumber(i)));
+	if theAction:GetID() ~= 0 then
+		g_MembersCtl[i].act:SetActionItem(theAction:GetID());
+		g_MembersCtl[i].act:Show();
+	if(City_Shop_Is_TicketPrice_Idx(City:GetCityShopInfo(0, "bid")) > 0) then
+		local money = City:GetCityShopInfo((g_CurPage-1)*12+(tonumber(i)), "tprice");
+		g_MembersCtl[i].money:SetProperty("MoneyNumber", tostring(money));
+		g_MembersCtl[i].money:Show();
+		g_MembersCtl[i].txt:SetText("Price of check");
+		g_MembersCtl[i].txt:Show();
+		if money == 9450 then
+			IsMax = 1;
+		end
+		if money < MinPriceBuy and isSoldOut > 0 then
+			if(money == 14700 or money == 21420 or money == 28350 or money == 4900 or money == 7140 or money == 9450 or money == 7350 or money == 17010 or money == 14175 or money == 12250 or money == 17850 or money == 23625 or money == 9800 or money == 14280 or money == 18900 or money == 12250 or money == 17850 or money == 23625) then					
+				MinIndexBuy = i;
+				MinPriceBuy = money;
+			end
+		end
+		if money > PriceBuy and isSoldOut > 0 then
+			if(money == 14700 or money == 21420 or money == 28350 or money == 4900 or money == 7140 or money == 9450 or money == 7350 or money == 17010 or money == 14175 or money == 12250 or money == 17850 or money == 23625 or money == 9800 or money == 14280 or money == 18900 or money == 12250 or money == 17850 or money == 23625) then					
+				IndexBuy = i;
+				PriceBuy = money;
+			end
+		end
+	else
+		local money = City:GetCityShopInfo((g_CurPage-1)*12+(tonumber(i)), "price");
+		g_MembersCtl[i].money:SetProperty("MoneyNumber", tostring(money));
+		g_MembersCtl[i].money:Show();
+		local contribute = City:GetCityShopInfo((g_CurPage-1)*12+(tonumber(i)), "contribute");
+		g_MembersCtl[i].txt:SetText("Guild contribution"..tostring(contribute));
+		g_MembersCtl[i].txt:Show();
+	end
+	else
+		g_MembersCtl[i].act:SetActionItem(-1);
+	end
+end
+function Packet_Open()
+	IsOpenPacket = false;
+	Packet_ResetExtBag();
+	this:Show();
+	NotifyPacketStatus(1)
+	Packet_OnUpdateShow();
+	szPacketName = 'material';
+	CurrNum = DataPool:GetMatBag_Num();
+	BaseNum = DataPool:GetMatBag_BaseNum();
+	MaxNum = DataPool:GetMatBag_MaxNum();
+	PACKAGE_NUM_PER_LINE = 5;		
+	HaveItem = false;
+	local nMaxLine = math.floor(CurrNum / PACKAGE_NUM_PER_LINE);
+	local nMaxDisplayNumber = nMaxLine * PACKAGE_NUM_PER_LINE;
+	for i=1, nMaxDisplayNumber do
+		local theAction,bLocked = PlayerPackage:EnumItem(szPacketName, i-1);
+		if i <= CurrNum then			
+			if theAction:GetID() ~= 0 then		
+				if string.sub(tostring(theAction:GetDefineID()),1,4) == '2040' then
+					HaveItem = true;
+				end
+			end
+		end
+	end
+	if not HaveItem then
+		if AutoTN == 'bk' then				
+			AutoTN = 'bksell';
+		end
+		if AutoTN == 'go' then				
+			AutoTN = 'gosell';
+		end
+	end
+	if AutoTN == 'gosell' or AutoTN == 'bksell' then		
+		if HaveItem then
+			PACKAGE_BUTTONS = {
+				Packet_Space_Line1_Row1_button,
+				Packet_Space_Line1_Row2_button,
+				Packet_Space_Line1_Row3_button,
+				Packet_Space_Line1_Row4_button,
+				Packet_Space_Line1_Row5_button,
+				Packet_Space_Line2_Row1_button,
+				Packet_Space_Line2_Row2_button,
+				Packet_Space_Line2_Row3_button,
+				Packet_Space_Line2_Row4_button,
+				Packet_Space_Line2_Row5_button,
+				Packet_Space_Line3_Row1_button,
+				Packet_Space_Line3_Row2_button,
+				Packet_Space_Line3_Row3_button,
+				Packet_Space_Line3_Row4_button,
+				Packet_Space_Line3_Row5_button,
+				Packet_Space_Line4_Row1_button,
+				Packet_Space_Line4_Row2_button,
+				Packet_Space_Line4_Row3_button,
+				Packet_Space_Line4_Row4_button,
+				Packet_Space_Line4_Row5_button,
+				Packet_Space_Line5_Row1_button,
+				Packet_Space_Line5_Row2_button,
+				Packet_Space_Line5_Row3_button,
+				Packet_Space_Line5_Row4_button,
+				Packet_Space_Line5_Row5_button,
+				Packet_Space_Line6_Row1_button,
+				Packet_Space_Line6_Row2_button,
+				Packet_Space_Line6_Row3_button,
+				Packet_Space_Line6_Row4_button,
+				Packet_Space_Line6_Row5_button,
+				Packet_Space_Line7_Row1_button,
+				Packet_Space_Line7_Row2_button,
+				Packet_Space_Line7_Row3_button,
+				Packet_Space_Line7_Row4_button,
+				Packet_Space_Line7_Row5_button,
+				Packet_Space_Line8_Row1_button,
+				Packet_Space_Line8_Row2_button,
+				Packet_Space_Line8_Row3_button,
+				Packet_Space_Line8_Row4_button,
+				Packet_Space_Line8_Row5_button,
+				Packet_Space_Line9_Row1_button,
+				Packet_Space_Line9_Row2_button,
+				Packet_Space_Line9_Row3_button,
+				Packet_Space_Line9_Row4_button,
+				Packet_Space_Line9_Row5_button,
+				Packet_Space_Line10_Row1_button,
+				Packet_Space_Line10_Row2_button,
+				Packet_Space_Line10_Row3_button,
+				Packet_Space_Line10_Row4_button,
+				Packet_Space_Line10_Row5_button,
+			};
+			Packet_ChangeTabIndex(1);
+			szPacketName = 'material';
+			CurrNum = DataPool:GetMatBag_Num();
+			BaseNum = DataPool:GetMatBag_BaseNum();
+			MaxNum = DataPool:GetMatBag_MaxNum();
+			PACKAGE_NUM_PER_LINE = 5;		
+			local nMaxLine = math.floor(CurrNum / PACKAGE_NUM_PER_LINE);
+			local nMaxDisplayNumber = nMaxLine * PACKAGE_NUM_PER_LINE;
+			for i=1, nMaxDisplayNumber do
+				if i <= CurrNum then
+					local theAction,bLocked = PlayerPackage:EnumItem(szPacketName, i-1);
+					if theAction:GetID() ~= 0 then		
+						if string.sub(tostring(theAction:GetDefineID()),1,4) == '2040' then
+							PACKAGE_BUTTONS[i]:SetActionItem(theAction:GetID());
+							PACKAGE_BUTTONS[i]:DoAction();
+							IsOpenPacket = true;
+						end
+					end
+				end
+			end
+		else
+			if AutoTN == 'gosell' then
+				EmptyHand = 0;
+				AutoTN = 'gobuy';
+			elseif AutoTN == 'bksell' then
+				EmptyHand = 0;
+				AutoTN = 'bkbuy';
+				QuestFrameOptionClicked(-1,805012,3);
+				QuestFrameOptionClicked(-1,805012,2);
+			end
+			QuestFrameOptionClicked(-1, 805012, 5);			
+		end		
+	end	
+end
+function ChatFrame_SetChannelSel(channel, channelname)
+	local CHANNEL_DATA_NEAR =
+	{	
+		'set:Buttons image:Channelvicinity_Normal',
+		'set:Buttons image:ChannelVicinity_Hover',
+		'set:Buttons image:ChannelVicinity_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFFFFF',
+	};	
+	local CHANNEL_DATA_SCENE =
+	{
+		'set:Buttons image:ChannelWorld_Normal',
+		'set:Buttons image:ChannelWorld_Hover',
+		'set:Buttons image:ChannelWorld_Pushed',
+		'#cFFFFFF',
+		'#e010101#c00FFCC',
+	};		
+	local CHANNEL_DATA_PRIVATE =
+	{
+		'set:Buttons image:ChannelPersonal_Normal',
+		'set:Buttons image:ChannelPersonal_Hover',
+		'set:Buttons image:ChannelPersonal_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF7C80',
+	};
+	local CHANNEL_DATA_SYSTEM =
+	{
+		'set:Buttons image:ChannelPersonal_Normal',
+		'set:Buttons image:ChannelPersonal_Hover',
+		'set:Buttons image:ChannelPersonal_Pushed',
+		'#cFF0000',
+		'#e010101#cFF0000',	
+	};		
+	local CHANNEL_DATA_TEAM =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#cFFFFFF',
+		'#e010101#cCC99FF',	
+	};
+	local CHANNEL_DATA_SELF =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_HELP =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_MENPAI =
+	{
+		'set:Buttons image:ChannelMenpai_Normal',
+		'set:Buttons image:ChannelMenpai_Hover',
+		'set:Buttons image:ChannelMenpai_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFFF00',		
+	};
+	local CHANNEL_DATA_GUILD =
+	{
+		'set:Buttons image:ChannelCorporative_Normal',
+		'set:Buttons image:ChannelCorporative_Hover',
+		'set:Buttons image:ChannelCorporative_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFCC99',		
+	};
+	local CHANNEL_DATA_GUILD_LEAGUE =
+	{
+		'set:CommonFrame6 image:ChannelTongMeng_Normal',
+		'set:CommonFrame6 image:ChannelTongMeng_Hover',
+		'set:CommonFrame6 image:ChannelTongMeng_Pushed',
+		'#cFFFFFF',
+		'#e010101#c66c4fc',	
+	};
+	local CHANNEL_DATA_IPREGION =
+	{
+		'set:UIIcons image:ChannelCorporative_Normal',
+		'set:UIIcons image:ChannelCorporative_Hover',
+		'set:UIIcons image:ChannelCorporative_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_RAID =
+	{
+		'set:Union1 image:Union_Channel_Normal',
+		'set:Union1 image:Union_Channel_Hover',
+		'set:Union1 image:Union_Channel_Pushed',
+		'#cFFFFFF',
+		'#e010101#cff3300',
+	};		
+	local CHANNEL_DATA_RAIDSQUAD =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#cFFFFFF',
+		'#e010101#cCC99FF',
+	};
+	local CHANNEL_DATA_BIGWORLD =
+	{
+		'set:Button12 image:ChannelOUT_Normal',
+		'set:Button12 image:ChannelOUT_Hover',
+		'set:Button12 image:ChannelOUT_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF0000',
+	};
+	local CHANNEL_DATA_CLAN =
+	{
+		'set:Button12 image:ChannelShili_Normal',
+		'set:Button12 image:ChannelShili_Hover',
+		'set:Button12 image:ChannelShili_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF0000',
+	};
+	CHANNEL_DATA = {};
+	CHANNEL_DATA['near'] = CHANNEL_DATA_NEAR;
+	CHANNEL_DATA['scene'] = CHANNEL_DATA_SCENE;
+	CHANNEL_DATA['private'] = CHANNEL_DATA_PRIVATE;
+	CHANNEL_DATA['system'] = CHANNEL_DATA_SYSTEM;
+	CHANNEL_DATA['team'] = CHANNEL_DATA_TEAM;
+	CHANNEL_DATA['self'] = CHANNEL_DATA_SELF;
+	CHANNEL_DATA['menpai'] = CHANNEL_DATA_MENPAI;
+	CHANNEL_DATA['guild'] = CHANNEL_DATA_GUILD;
+	CHANNEL_DATA['guild_league'] = CHANNEL_DATA_GUILD_LEAGUE;
+	CHANNEL_DATA['help'] = CHANNEL_DATA_HELP;
+	CHANNEL_DATA['ipregion'] = CHANNEL_DATA_IPREGION;	
+	CHANNEL_DATA['raid'] = CHANNEL_DATA_RAID;
+	CHANNEL_DATA['raidsquad'] = CHANNEL_DATA_RAIDSQUAD;
+	CHANNEL_DATA['bigworld'] = CHANNEL_DATA_BIGWORLD;
+	CHANNEL_DATA['clan'] = CHANNEL_DATA_CLAN;
+	G_TheCurrentChannel = channel;	
+	if(CHANNEL_DATA[channel] == nil) then
+		return;
+	end
+	Chat_ChannelSelecter:SetProperty("NormalImage", CHANNEL_DATA[channel][1]);
+	Chat_ChannelSelecter:SetProperty("HoverImage", CHANNEL_DATA[channel][2]);
+	Chat_ChannelSelecter:SetProperty("PushedImage", CHANNEL_DATA[channel][3]);
+end
+function ChatFrame_TextAccepted(arg)
+	local prvname = arg;
+	if("" ~= prvname) then
+		Talk : HandleHistoryAction("editbox", prvname,"");
+	else
+		Talk : HandleHistoryAction("editbox", "","");
+	end
+end
+function  MessageBox_Self_UpdateRect()
+	local nWidth, nHeight = MessageBox_Self_Text:GetWindowSize();
+	local nTitleHeight = 36;
+	local nBottomHeight = 75;
+	nWindowHeight = nTitleHeight + nBottomHeight + nHeight;
+	MessageBox_Self_Frame:SetProperty( "AbsoluteHeight", tostring( nWindowHeight ) );
+	if tonumber(arg0) == 24 or arg0 == '#{SJXL_120423_08}' then		
+		IsMessageBox = true;	
+	else
+		IsMessageBox = false;
+	end
+end
+function AcceptBox_ResetFrame()
+	AcceptBox_PageHeader_Name:SetText("")
+	AcceptBox_OK_Button:Enable()
+	AcceptBox_OK_Button:Show()
+	AcceptBox_OK_Button:SetText("#{INTERFACE_XML_557}")
+	AcceptBox_Cancel_Button:Enable()
+	AcceptBox_Cancel_Button:Show()
+	AcceptBox_Cancel_Button:SetText("#{INTERFACE_XML_542}")
+	AcceptBox_Frame:SetProperty("AbsoluteSize", FrameSize_Original)
+	AcceptBox_Blank:SetProperty("UnifiedSize", AcceptBox_Blank_Orignial_Size)
+	if tonumber(arg0) == 20100717 then
+		IsAcceptBox = true;
+	else
+		IsAcceptBox = false;
+	end
+end
+function MessageBox_Other_UpdateFrame()	
+	local nWidth, nHeight = MessageBox_Other_Text:GetWindowSize();
+	local nTitleHeight = 36;
+	local nBottomHeight = 75;
+	nWindowHeight = nTitleHeight + nBottomHeight + nHeight;
+	MessageBox_Other_Frame:SetProperty( "AbsoluteHeight", tostring( nWindowHeight ) );
+	local txt = MessageBox_Other_Text:GetText();
+	if string.find(txt, 'hy v÷ng các hÕ cùng nhóm, ð°ng ý không?') then
+		IsMessageBoxOther = true;
+	else
+		IsMessageBoxOther = false;
+	end
+end
+function Minimap_CoordinateUpdate()
+	local TimeDot = {};
+	TimeDot[1] = MiniMap_TimeDot1;
+	TimeDot[2] = MiniMap_TimeDot2;
+	TimeDot[3] = MiniMap_TimeDot3;
+	TimeDot[4] = MiniMap_TimeDot4;
+	TimeDot[5] = MiniMap_TimeDot5;
+	TimeDot[6] = MiniMap_TimeDot6;
+	TimeDot[7] = MiniMap_TimeDot7;
+	TimeDot[8] = MiniMap_TimeDot8;
+	TimeDot[9] = MiniMap_TimeDot9;
+	TimeDot[10] = MiniMap_TimeDot10;
+	TimeDot[11] = MiniMap_TimeDot11;
+	TimeDot[12] = MiniMap_TimeDot12;
+	local coordinatex,coordinatey,direct;
+	coordinatex, coordinatey = MiniMap_MapArea:GetMouseScenePos();
+	MiniMap_Coordinate:SetText( "#cFDFF73"..tostring( coordinatex ).."  "..tostring( coordinatey ) );
+	for i=1,12 do
+		TimeDot[i]:Hide()
+	end
+	local hour = GetCurrentTime() + 1;
+	MiniMap_ChineseTime:SetProperty("SetCurrentImage", "Time"..tostring( hour ) );
+	TimeDot[ hour ]:Show();
+	MapID = GetSceneID();
+	if IsMessageBox then 
+		if MapID ~= 261 then 
+			setmetatable(_G, {__index = MessageBox_Self_Env});
+			MessageBox_Self_OK_Clicked(); 
+			this:Show();
+		end 
+		IsMessageBox = false; 
+	end 
+	if IsAcceptBox then 
+		if MapID ~= 261 then 
+			setmetatable(_G, {__index = AcceptBox_Env});
+			AcceptBox_OK_Clicked(); 
+			this:Show();
+		end 
+		IsAcceptBox = false;
+	end
+	if IsMessageBoxOther then
+		setmetatable(_G, {__index = MessageBox_Other_Env});
+		MessageBox_Other_OK_Clicked();
+		IsMessageBoxOther = false;
+	end
+	
+	if StandTime == nil then
+		StandTime = 0
+	end	
+	if IsIdleLogic() == 1 and (AutoTN == '@go' or AutoTN == '@bk') then
+		StandTime = StandTime + 1;		
+		if StandTime > 20 then
+			xNow,yNow = Player:GetPos(); 
+			AutoRunToTarget(xNow - 1,yNow + 1);
+			StandTime = 0;
+		else
+			OpenAutoSearch();
+		end
+	else
+		StandTime = 0;
+	end
+	if IsOpenPacket then
+		xNow,yNow = Player:GetPos();			
+		if xNow ~= 148 or yNow ~= 56 then
+			AutoRunToTarget(148,56);	
+			SetAutoRunTargetNPCName('Officer Chien');
+			QuestFrameOptionClicked(-1, 805012, 5);
+		end
+		ToggleContainer();		
+	end
+end

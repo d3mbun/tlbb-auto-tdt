@@ -1,0 +1,579 @@
+function Quest_Open()
+	this:Show();
+	
+	if(IsWindowShow('ChangyigeZigeCheck')) then
+		 CloseWindow('ChangyigeZigeCheck', true)
+	end
+	
+	NpcName = Target:GetDialogNpcName();
+	MapID = GetSceneID();
+	
+	if string.find(NpcName, 'Mô Kim Hi®u Úy') then 
+		QuestFrameOptionClicked(-1, 50063, 100); 
+	end
+	
+	if string.find(NpcName, 'Ác T£c TÕo Phän') then
+	   if MapID == 3 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 4 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 5 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 6 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 7 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 8 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		end
+	end
+	
+	if string.find(NpcName, 'Thiªu Lâm Vân Du Võ Tång') then
+	   if MapID == 18 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 24 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 30 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 272 then
+			QuestFrameOptionClicked(-1, 402108, 1);
+		end
+	end
+	
+	if string.find(NpcName, 'Giang h° tiêu ti¬u') or string.find(NpcName, 'Giang h° tà ðÕo') or string.find(NpcName, 'Ác Bá') then
+		if MapID == 9then
+			QuestFrameOptionClicked(-1, 808027, 0);
+		elseif MapID == 10 then
+			QuestFrameOptionClicked(-1, 808032, 0);
+		elseif MapID == 11 then
+			QuestFrameOptionClicked(-1, 808031, 0);
+		elseif MapID == 12 then
+			QuestFrameOptionClicked(-1, 808033, 0);
+		elseif MapID == 13 then
+			QuestFrameOptionClicked(-1, 808029, 0);
+		elseif MapID == 14 then
+			QuestFrameOptionClicked(-1, 808016, 0);
+		elseif MapID == 15 then
+			QuestFrameOptionClicked(-1, 808034, 0);
+		elseif MapID == 16 then
+			QuestFrameOptionClicked(-1, 808028, 0);
+		elseif MapID == 17 then
+			QuestFrameOptionClicked(-1, 808030, 0);
+		elseif MapID == 284 then
+			QuestFrameOptionClicked(-1, 808043, 0);
+		elseif MapID == 615 then
+			QuestFrameOptionClicked(-1, 808043, 0);
+		end
+	end
+	
+	if (string.find(NpcName, 'Ðinh Ðinh') or string.find(NpcName, 'Ðông Ðông')) and MapID == 0 then
+		QuestFrameOptionClicked(-1, 800116, 2);
+	end
+	
+	if string.find(NpcName, 'MÕnh Bà') then
+		if MapID == 77 then
+			QuestFrameOptionClicked(-1, 77001, 0)
+		end
+		if MapID == 578 then
+			QuestFrameOptionClicked(-1, 505072, 1)
+		end
+	end
+	
+	
+end
+function AntiRobot_TimeReach()		
+	AskRet2SelServer()
+end
+function ChatFrame_SetChannelSel(channel, channelname)
+	local CHANNEL_DATA_NEAR =
+	{	
+		'set:Buttons image:Channelvicinity_Normal',
+		'set:Buttons image:ChannelVicinity_Hover',
+		'set:Buttons image:ChannelVicinity_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFFFFF',
+	};	
+	local CHANNEL_DATA_SCENE =
+	{
+		'set:Buttons image:ChannelWorld_Normal',
+		'set:Buttons image:ChannelWorld_Hover',
+		'set:Buttons image:ChannelWorld_Pushed',
+		'#cFFFFFF',
+		'#e010101#c00FFCC',
+	};		
+	local CHANNEL_DATA_PRIVATE =
+	{
+		'set:Buttons image:ChannelPersonal_Normal',
+		'set:Buttons image:ChannelPersonal_Hover',
+		'set:Buttons image:ChannelPersonal_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF7C80',
+	};
+	local CHANNEL_DATA_SYSTEM =
+	{
+		'set:Buttons image:ChannelPersonal_Normal',
+		'set:Buttons image:ChannelPersonal_Hover',
+		'set:Buttons image:ChannelPersonal_Pushed',
+		'#cFF0000',
+		'#e010101#cFF0000',	
+	};		
+	local CHANNEL_DATA_TEAM =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#cFFFFFF',
+		'#e010101#cCC99FF',	
+	};
+	local CHANNEL_DATA_SELF =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_HELP =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_MENPAI =
+	{
+		'set:Buttons image:ChannelMenpai_Normal',
+		'set:Buttons image:ChannelMenpai_Hover',
+		'set:Buttons image:ChannelMenpai_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFFF00',		
+	};
+	local CHANNEL_DATA_GUILD =
+	{
+		'set:Buttons image:ChannelCorporative_Normal',
+		'set:Buttons image:ChannelCorporative_Hover',
+		'set:Buttons image:ChannelCorporative_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFCC99',		
+	};
+	local CHANNEL_DATA_GUILD_LEAGUE =
+	{
+		'set:CommonFrame6 image:ChannelTongMeng_Normal',
+		'set:CommonFrame6 image:ChannelTongMeng_Hover',
+		'set:CommonFrame6 image:ChannelTongMeng_Pushed',
+		'#cFFFFFF',
+		'#e010101#c66c4fc',	
+	};
+	local CHANNEL_DATA_IPREGION =
+	{
+		'set:UIIcons image:ChannelCorporative_Normal',
+		'set:UIIcons image:ChannelCorporative_Hover',
+		'set:UIIcons image:ChannelCorporative_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_RAID =
+	{
+		'set:Union1 image:Union_Channel_Normal',
+		'set:Union1 image:Union_Channel_Hover',
+		'set:Union1 image:Union_Channel_Pushed',
+		'#cFFFFFF',
+		'#e010101#cff3300',
+	};		
+	local CHANNEL_DATA_RAIDSQUAD =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#cFFFFFF',
+		'#e010101#cCC99FF',
+	};
+	local CHANNEL_DATA_BIGWORLD =
+	{
+		'set:Button12 image:ChannelOUT_Normal',
+		'set:Button12 image:ChannelOUT_Hover',
+		'set:Button12 image:ChannelOUT_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF0000',
+	};
+	local CHANNEL_DATA_CLAN =
+	{
+		'set:Button12 image:ChannelShili_Normal',
+		'set:Button12 image:ChannelShili_Hover',
+		'set:Button12 image:ChannelShili_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF0000',
+	};
+	CHANNEL_DATA = {};
+	CHANNEL_DATA['near'] = CHANNEL_DATA_NEAR;
+	CHANNEL_DATA['scene'] = CHANNEL_DATA_SCENE;
+	CHANNEL_DATA['private'] = CHANNEL_DATA_PRIVATE;
+	CHANNEL_DATA['system'] = CHANNEL_DATA_SYSTEM;
+	CHANNEL_DATA['team'] = CHANNEL_DATA_TEAM;
+	CHANNEL_DATA['self'] = CHANNEL_DATA_SELF;
+	CHANNEL_DATA['menpai'] = CHANNEL_DATA_MENPAI;
+	CHANNEL_DATA['guild'] = CHANNEL_DATA_GUILD;
+	CHANNEL_DATA['guild_league'] = CHANNEL_DATA_GUILD_LEAGUE;
+	CHANNEL_DATA['help'] = CHANNEL_DATA_HELP;
+	CHANNEL_DATA['ipregion'] = CHANNEL_DATA_IPREGION;	
+	CHANNEL_DATA['raid'] = CHANNEL_DATA_RAID;
+	CHANNEL_DATA['raidsquad'] = CHANNEL_DATA_RAIDSQUAD;
+	CHANNEL_DATA['bigworld'] = CHANNEL_DATA_BIGWORLD;
+	CHANNEL_DATA['clan'] = CHANNEL_DATA_CLAN;
+	G_TheCurrentChannel = channel;	
+	if CHANNEL_DATA[channel] == nil then
+		return;
+	end
+	Chat_ChannelSelecter:SetProperty('NormalImage', CHANNEL_DATA[channel][1]);
+	Chat_ChannelSelecter:SetProperty('HoverImage', CHANNEL_DATA[channel][2]);
+	Chat_ChannelSelecter:SetProperty('PushedImage', CHANNEL_DATA[channel][3]);
+end
+function ChatFrame_TextAccepted()
+	if G_TheCurrentChannel == nil then
+		G_TheCurrentChannel = 'near'
+	end
+	local txt = Chat_EditBox:GetItemElementsString();
+	TXT = txt
+	
+	MapID = GetSceneID();
+	if txt == '@map' then
+		PushDebugMessage('Map hi®n tÕi: '..MapID)
+	end
+	if txt == '@q' then
+		AskRet2SelServer()
+	end
+	
+	local bChatAction = Talk : IsValidChatActionString(G_TheCurrentChannel, txt);
+	if (bChatAction == 1) then
+		g_ChatActionTxt = txt
+		ChatFrame_SetEditBoxTxt("")
+		Talk : CanDoDoubleAction_Bar()
+	elseif (bChatAction == 2) then		
+		g_ChatActionTxt = ""
+		ChatFrame_SetEditBoxTxt("")
+	elseif (bChatAction == 0) then
+		local prvname,perColor = Talk : SendChatMessage(G_TheCurrentChannel, txt);
+		if(nil == prvname ) then prvname = ""; end
+		if(nil == perColor ) then perColor = ""; end
+		local str = "";
+		if(prvname == "")then
+			str = str..perColor;
+		else
+			str = str.."/"..prvname.." "..perColor;
+		end
+
+		if("" ~= str) then
+			ChatFrame_SetEditBoxTxt(str);
+		else
+			ChatFrame_SetEditBoxTxt("");
+		end
+	end
+end
+function DebugListBox_Update(arg0)
+	max_size = 400;
+	this:Show();
+	local str;
+	local fontcolor,extencolor;
+	fontcolor,extencolor = DataPool:GetUIColor(1000);	
+	if(fontcolor == "-1") then
+		fontcolor = "00FFFF";
+	end
+	if(extencolor == "-1") then
+		extencolor = "010101";
+	end	
+	if(string.len(arg0) > max_size) then
+		if(DataPool:Check_StringCode(string.sub(arg0,1,max_size)) == 0) then
+				str = string.sub(arg0,1,max_size-1);
+
+		else
+				str = string.sub(arg0,1,max_size);
+		end		
+		DebugListBox_ListBox:AddInfo( "#c"..fontcolor .. "#e" .. extencolor .. str );
+		return;
+	end
+	DebugListBox_ListBox:AddInfo( "#c"..fontcolor.."#e" .. extencolor .. arg0 );
+	if arg0 ~= nil then
+		if string.find(arg0, '#{SDHDRW_091109_29}') and string.find(arg0, '#{SDHDRW_091109_30}') then		
+			COUNT = arg0;
+		end		
+		if DEBUG == nil then
+			DEBUG = ''
+		end
+		if not string.find(arg0, '#{ResultText_6}') and not string.find(arg0, 'kinh nghi®m') and not string.find(arg0, 'vô hi®u') then
+			DEBUG = arg0;
+		end
+		if DEBUG == '#{QLYX_100517_9}' then
+			DUACOMPLETE = '1';
+		end
+		if DEBUG == '#{BHCJ_140523_127}' then
+			TUBAOBON = 'ChuaMo';
+		end
+		if string.find(DEBUG, '#{BHCJ_140523_89') or string.find(DEBUG, '#{BHCJ_140523_84}') then
+			TUBAOBON = 'DaDao';
+		end
+		if string.find(DEBUG, '#{BHCJ_140523_96}') or string.find(DEBUG, '#{BHCJ_140523_90}') then
+			TUBAOBON = 'DaTra';
+		end
+		if not string.find(arg0, '#{CJG_090413_32}0/1#{DSSJ_4}') then
+			DBIF = arg0;
+		end
+		if string.find(arg0, '#{CJG_090413_21}') or string.find(arg0, '#{CJG_090605_4}') then
+			TKCINFO = arg0;
+		end
+		if string.find(arg0, '#{CJG_090605_4}') then
+			DB = arg0;
+		end
+		if string.find(DEBUG, '#{DJTS_110509_46}') and string.find(DEBUG, '#{DJTS_110509_47}') then
+			ISCLICK = 1;			
+		end
+		if string.find(arg0, '200/200') or string.find(arg0, '#{FBSD_150126_06') then
+			IsDone = 'Done';
+		end
+		if string.find(arg0, '#{YZWYH_150129_02}') then
+			IsDone = 'MDP';
+		end
+		if string.find(arg0, 'tß½ng trþ Ti«n Hoành Vû') then
+			IsDone = 'CMT';
+		end
+	end	
+end
+function Split(str,delim,maxNb) 
+	if string.find(str,delim) == nil then 
+		return {str} end
+	if maxNb == nil or maxNb < 1 then 
+		maxNb = 0 
+	end 
+	local result = {} 
+	local pat = '(.-)' .. delim .. '()'; 
+	local nb = 0; 
+	local lastPos; 
+	for part,pos in string.gfind(str,pat) do 
+		nb = nb + 1; 
+		result[nb] = part; 
+		lastPos = pos; 
+		if nb == maxNb then 
+			break 
+		end 
+	end 
+	if nb ~= maxNb then 
+		result[nb + 1] = string.sub(str,lastPos) 
+	end 
+	return result
+end
+function  MessageBox_Self_UpdateRect()		
+	local nWidth, nHeight = MessageBox_Self_Text:GetWindowSize();
+	local nTitleHeight = 36;
+	local nBottomHeight = 75;
+	nWindowHeight = nTitleHeight + nBottomHeight + nHeight;
+	MessageBox_Self_Frame:SetProperty( "AbsoluteHeight", tostring( nWindowHeight ) );
+	MSGBOX = arg0;
+	if string.find(arg0 , '#{TWFX_200814_03}') or string.find(arg0, '#{SJXL_120423_07}') or string.find(arg0, '#{SJXL_120423_08}') or string.find(arg0, 'Packet_StallSale') or tonumber(arg0) == 24 or tonumber(arg0) == 255 or arg0 == '#{SJXL_120423_08}' or arg0 == '#{SJXL_120423_07}' or arg0 == '#{KVKGZ_110620_146}' or arg0 == '#{KVKGZ_110620_145}' then		
+		IsMessageBox = 1;	
+	end	
+end
+function AcceptBox_ResetFrame()	
+	AcceptBox_PageHeader_Name:SetText("")
+	AcceptBox_OK_Button:Enable()
+	AcceptBox_OK_Button:Show()
+	AcceptBox_OK_Button:SetText("#{INTERFACE_XML_557}")
+	AcceptBox_Cancel_Button:Enable()
+	AcceptBox_Cancel_Button:Show()
+	AcceptBox_Cancel_Button:SetText("#{INTERFACE_XML_542}")
+	AcceptBox_Frame:SetProperty("AbsoluteSize", FrameSize_Original)
+	ACCBOX = arg0;
+    if 1 == SystemSetup:IsClassic() then
+	    AcceptBox_Blank:SetProperty("UnifiedSize", AcceptBox_Blank_Orignial_Size)
+    end
+	if tonumber(arg0) == 20100717 or tonumber(arg0) == 20130819 or tonumber(arg0) == 20141008 then
+		IsAcceptBox = 1;
+	end
+end
+function MessageBox_Other_UpdateFrame()
+	local nWidth, nHeight = MessageBox_Other_Text:GetWindowSize();
+	local nTitleHeight = 36;
+	local nBottomHeight = 75;
+	nWindowHeight = nTitleHeight + nBottomHeight + nHeight;
+	MessageBox_Other_Frame:SetProperty( "AbsoluteHeight", tostring( nWindowHeight ) );
+	if SystemSetup:IsClassic() == 0 then
+		MessageBox_Other_Frame:SetProperty( "AbsoluteWidth", 300 );
+	else
+		MessageBox_Other_Frame:SetProperty( "AbsoluteWidth", 256 );
+	end
+	local txt = MessageBox_Other_Text:GetText();
+	if string.find(txt, 'mu¯n các hÕ theo ðµi, ð°ng ý không?') then
+		IsMessageBoxOther = 1;
+	end
+end
+function HuyNhiemVu(nhiemvu)
+	if nhiemvu == nil then
+		return
+	end
+	while true do 
+		local name, content = DataPool:GetPlayerMission_Memo(cnt); 
+		if string.find(name, nhiemvu) then 
+			if DataPool:GetPlayerMission_Variable(cnt, 0) ~= 1 then 
+				DataPool:Mission_Abnegate_Popup(cnt,DataPool:GetPlayerMission_Memo(cnt));
+				setmetatable(_G, {__index = MessageBox_Self_Env}); 
+				MessageBox_Self_OK_Clicked();
+			end 
+		end 
+		cnt = cnt + 1; 
+		if cnt == 20 then 
+			return
+		end 
+	end
+end
+function ReadMissionOutline()
+	MISSION = "";
+	for i=1,200 do
+		local iMissionType = i;
+		local DeployNum = GetMissionOutlineNum(iMissionType);
+		local nMyLevel = Player:GetData("LEVEL");
+		 for i=1, DeployNum do
+			local MissionLevel, MinLevel, MaxLevel, strNpcName, strNpcPos, strScene, strMissionName, PosX, PosY, SceneID = GetMissionOutlineInfo(iMissionType, i);		
+			if(MissionLevel <= nMyLevel) then
+				local strInfo = "";
+				strNpcPos = "#{_INFOAIM"..(PosX)..","..(PosY)..","..(SceneID)..","..(strNpcName).."}";
+				if strScene and strScene ~= "" then
+					strInfo = strInfo.."   #G"..strScene.."  #R"..strNpcName..strNpcPos;
+				else
+					strInfo = strInfo.."   #R"..strNpcName..strNpcPos
+				end
+				MISSION = MISSION .. strMissionName .. '=' .. strInfo .. ';';
+			end
+		end
+	end
+	return MISSION;
+end
+function Minimap_CoordinateUpdate()
+	TimeDot = {};
+	TimeDot[1] = MiniMap_TimeDot1;
+	TimeDot[2] = MiniMap_TimeDot2;
+	TimeDot[3] = MiniMap_TimeDot3;
+	TimeDot[4] = MiniMap_TimeDot4;
+	TimeDot[5] = MiniMap_TimeDot5;
+	TimeDot[6] = MiniMap_TimeDot6;
+	TimeDot[7] = MiniMap_TimeDot7;
+	TimeDot[8] = MiniMap_TimeDot8;
+	TimeDot[9] = MiniMap_TimeDot9;
+	TimeDot[10] = MiniMap_TimeDot10;
+	TimeDot[11] = MiniMap_TimeDot11;
+	TimeDot[12] = MiniMap_TimeDot12;
+	coordinatex, coordinatey = MiniMap_MapArea:GetMouseScenePos();
+	MiniMap_Coordinate:SetText( "#cFDFF73"..tostring( coordinatex ).."  "..tostring( coordinatey ) );
+	for i=1,12 do
+		TimeDot[i]:Hide()
+	end
+	hour = GetCurrentTime() + 1;
+	MiniMap_ChineseTime:SetProperty("SetCurrentImage", "Time"..tostring(hour));
+	TimeDot[hour]:Show();
+	if IsHideMap == true then
+		IsHideMap = false;
+		this:Show();
+	end
+	if IsIdleLogic() == 1 then
+		if IsMessageBox == nil or IsMessageBox == true or IsMessageBox == false then 
+			IsMessageBox = 0 
+		end 
+		if IsAcceptBox == nil or IsAcceptBox == true or IsAcceptBox == false then 
+			IsAcceptBox = 0 
+		end 
+		if IsMessageBoxOther == nil or IsMessageBoxOther == true or IsMessageBoxOther == false then 
+			IsMessageBoxOther = 0 
+		end 
+		MapID = GetSceneID(); 
+		if MapID == 261 and IsOut then 
+			MapID = 260; 
+		end 
+		distance = 300; 
+		if MapID == 1 then 
+			CharX, CharY = Player:GetPos(); 
+			distance = math.sqrt(math.pow(363 - CharX, 2) + math.pow(243 - CharY, 2)); 
+		end 
+		if IsMessageBox > 0 and distance > 5  then 
+			IsMessageBox = IsMessageBox + 1; 
+			if IsMessageBox >= 1 then 			
+				if MapID ~= 261 and distance > 5 then 
+					IsMessageBox = 0; 
+					setmetatable(_G, {__index = MessageBox_Self_Env}); 
+					if this:IsVisible() then
+						MessageBox_Self_OK_Clicked();
+					end
+					IsHideMap = true; 
+				end 
+			end 
+		end 
+		if IsAcceptBox > 0 and distance > 5 then 
+			IsAcceptBox = IsAcceptBox + 1; 
+			if IsAcceptBox >= 1 then 
+				if MapID ~= 261 then 
+					setmetatable(_G, {__index = AcceptBox_Env}); 
+					if this:IsVisible() then
+						AcceptBox_OK_Clicked(); 
+					end
+					IsHideMap = true; 
+				end 
+				IsAcceptBox = 0; 
+			end 
+		end 
+		if IsMessageBoxOther > 0 and distance > 5 then 
+			IsMessageBoxOther = IsMessageBoxOther + 1; 
+			if IsMessageBoxOther >= 1 then 
+				setmetatable(_G, {__index = MessageBox_Other_Env}); 
+				if this:IsVisible() then
+					MessageBox_Other_OK_Clicked(); IsHideMap = true; 
+				end
+				IsMessageBoxOther = 0; 
+			end 
+		end  
+		if ISCLICK == nil then 
+			ISCLICK = 0; 
+		end 
+		if ISCLICK > 0 then 
+			ISCLICK = ISCLICK + 1; 
+		end 
+		if ISCLICK > 40 then 
+			setmetatable(_G, {__index = Item_TuDunZhu_Env}); 
+			Item_TuDunZhu_OK_Clicked(); 
+			IsHideMap = true; 
+			PushDebugMessage('D¸ch Chuy¬n'); 
+			ISCLICK = 0; 
+		end
+		if delay == nil then delay = 0 end
+		delay = delay + 1;
+		if delay > 20 then
+			delay = 0;
+			UpdatePlayerList(false); 
+			enemy = '-'; 
+			for i=1, 16 do 
+				id , iName , iLevel , guild , menpai ,iconstr, enemyFlag ,teamPower = GetPlayerFromList(i-1); 
+				if id ~= -1 then 
+					enemy = enemy .. iName .. '-'; 
+				end 
+			end 
+		end
+	end		
+end
+
+function Accept()
+	for i = 0, DataPool:GetApplyMemberCount() do 
+		if TEAM == nil then 
+			Player:SendAgreeJoinTeam_Apply(i); 
+		else 
+			szNick,iFamily,iLevel,iCapID,iHead,iArmourID,iCuffID,iFootID,iWeaponID,_,sZoneWorldID = DataPool:GetApplyMemberInfo(i); 
+			if string.find(TEAM, szNick) then 
+				Player:SendAgreeJoinTeam_Apply(i); 				
+			end 
+		end 
+	end 
+	szNick,iFamily,iLevel,iCapID,iHead,iArmourID,iCuffID,iFootID,iWeaponID,_,sZoneWorldID = DataPool:GetInviteTeamMemberInfo(0,0);
+	if TEAM ~= nil and DataPool:GetInviteTeamCount() > 0 and string.find(TEAM, szNick) then 
+		Player:AgreeJoinTeam(0) 
+	end 	
+	if TEAM == nil  and DataPool:GetInviteTeamCount() > 0 then
+		Player:AgreeJoinTeam(0) 
+	end
+	DataPool:ClearAllApply();
+	Player:RejectJoinTeam(0);
+end

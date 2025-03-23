@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Publishers>
+  <Publisher Name="VinaGame" Path="">
+    <Servers>
+      <Server>Thiên Long 15</Server>
+      <Server>Bạch Hổ</Server>
+      <Server>Thánh Hỏa</Server>
+      <Server>Huyền Tố</Server>      
+      <Server>Thanh Long</Server>
+      <Server>Thiên Long 01</Server>
+      <Server>Thiên Long 11</Server>
+      <Server>Thiên Long 14</Server>
+      <Server>Thiên Long 16</Server>
+      <Server>Thiên Long 17</Server>
+      <Server>Thiên Long 18</Server>
+      <Server>Thiên Long 19</Server>
+      <Server>Thiên Long 20</Server>
+      <Server>Thiên Long 21</Server>
+      <Server>Thiên Long 22</Server>
+      <Server>Thiên Long 23</Server>
+      <Server>Thiên Long 24</Server>
+      <Server>Thiên Long 25</Server>
+      <Server>Thiên Long 26</Server>
+	  <Server>Thiên Long 27</Server>
+      <Server>Thiên Long 28</Server>
+      <Server>Thiên Long 29</Server>
+      <Server>Thiên Long 30</Server>
+      <Server>Thiên Long 31</Server>
+      <Server>Thiên Long 32</Server>
+      <Server>Thiên Long 33</Server>
+      <Server>Thiên Long 34</Server>
+      <Server>Thiên Long 35</Server>
+      <Server>Thiên Long 36</Server>
+      <Server>Thiên Long 37</Server>
+      <Server>Thiên Long 38</Server>
+      <Server>Thiên Long 39</Server>
+      <Server>Thiên Long 40</Server>
+    </Servers>
+  </Publisher>
+  <Publisher Name="Tình Kiếm" Path="">
+    <Servers>
+      <Server>Nhất Kiếm</Server>
+      <Server>Nhị Kiếm</Server>
+      <Server>Tam Kiếm</Server>
+      <Server>Tứ Kiếm</Server>
+      <Server>Tiếu Ngạo</Server>
+      <Server>Tái Chiến Giang Hồ</Server>
+      <Server>Long Kiếm</Server>
+      <Server>Du Kiếm</Server>
+      <Server>Song Kiếm</Server>
+      <Server>Ảnh Kiếm</Server>
+    </Servers>
+    <Tails>
+      <Tail>-------------------------</Tail>
+      <Tail>Nhất Kiếm</Tail>
+      <Tail>Nhị Kiếm</Tail>
+      <Tail>Tam Kiếm</Tail>
+      <Tail>Tứ Kiếm</Tail>
+      <Tail>Tái Chiến</Tail>
+      <Tail>Tiếu Ngạo</Tail>
+      <Tail>Long Kiếm</Tail>
+      <Tail>Du Kiếm</Tail>
+      <Tail>Song Kiếm</Tail>
+    </Tails>
+  </Publisher>
+  <Publisher Name="69 Dragon Oath">
+    <Servers>
+      <Server>Shaolin</Server>
+      <Server>Zion</Server>
+    </Servers>
+  </Publisher>
+  <Publisher Name="Dragon Oath">
+    <Servers>
+      <Server>PVP</Server>
+      <Server>PVE</Server>
+    </Servers>
+  </Publisher>
+  <Version>3.4</Version>
+</Publishers>

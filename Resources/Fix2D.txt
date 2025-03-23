@@ -1,0 +1,274 @@
+function Quest_Open()
+	this:Show();
+	
+	NpcName = Target:GetDialogNpcName();
+	MapID = GetSceneID();
+	
+	if string.find(NpcName, 'Mô Kim Hi®u Úy') then 
+		QuestFrameOptionClicked(-1, 50063, 100); 
+	end
+	
+	if string.find(NpcName, 'Ác T£c TÕo Phän') then
+	   if MapID == 3 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 4 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 5 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 6 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 7 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		elseif MapID == 8 then
+			QuestFrameOptionClicked(-1, 50013, -1);
+		end
+	end
+	
+	if string.find(NpcName, 'Thiªu Lâm Vân Du Võ Tång') then
+	   if MapID == 18 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 24 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 30 then
+			QuestFrameOptionClicked(-1, 808042, 1);
+		elseif MapID == 272 then
+			QuestFrameOptionClicked(-1, 402108, 1);
+		end
+	end
+	
+	if string.find(NpcName, 'Giang H° Tiêu Ti¬u') or string.find(NpcName, 'Giang h° tiêu ti¬u') or string.find(NpcName, 'Giang h° tà ðÕo') then
+		if MapID == 9then
+			QuestFrameOptionClicked(-1, 808027, 0);
+		elseif MapID == 10 then
+			QuestFrameOptionClicked(-1, 808032, 0);
+		elseif MapID == 11 then
+			QuestFrameOptionClicked(-1, 808031, 0);
+		elseif MapID == 12 then
+			QuestFrameOptionClicked(-1, 808033, 0);
+		elseif MapID == 13 then
+			QuestFrameOptionClicked(-1, 808029, 0);
+		elseif MapID == 14 then
+			QuestFrameOptionClicked(-1, 808016, 0);
+		elseif MapID == 15 then
+			QuestFrameOptionClicked(-1, 808034, 0);
+		elseif MapID == 16 then
+			QuestFrameOptionClicked(-1, 808028, 0);
+		elseif MapID == 17 then
+			QuestFrameOptionClicked(-1, 808030, 0);
+		elseif MapID == 284 then
+			QuestFrameOptionClicked(-1, 808043, 0);
+		end
+	end
+	
+	if (string.find(NpcName, 'Ðinh Ðinh') or string.find(NpcName, 'Ðông Ðông')) and MapID == 0 then
+		QuestFrameOptionClicked(-1, 800116, 2);
+	end
+	
+	if string.find(NpcName, 'MÕnh Bà') then
+		if MapID == 77 then
+			QuestFrameOptionClicked(-1, 77001, 0)
+		end
+		if MapID == 578 then
+			QuestFrameOptionClicked(-1, 77001, 0)
+		end
+	end
+	
+	
+	
+	if string.find(NpcName, 'Long Bá Thiên') then
+		if MapID == 0 or MapID == 242 then
+			QuestFrameOptionClicked(-1,129,0);
+			QuestFrameOptionClicked(-1,129,1001);			
+		end
+	end
+end
+
+function ChatFrame_SetChannelSel(channel, channelname)
+	local CHANNEL_DATA_NEAR =
+	{	
+		'set:Buttons image:Channelvicinity_Normal',
+		'set:Buttons image:ChannelVicinity_Hover',
+		'set:Buttons image:ChannelVicinity_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFFFFF',
+	};	
+	local CHANNEL_DATA_SCENE =
+	{
+		'set:Buttons image:ChannelWorld_Normal',
+		'set:Buttons image:ChannelWorld_Hover',
+		'set:Buttons image:ChannelWorld_Pushed',
+		'#cFFFFFF',
+		'#e010101#c00FFCC',
+	};		
+	local CHANNEL_DATA_PRIVATE =
+	{
+		'set:Buttons image:ChannelPersonal_Normal',
+		'set:Buttons image:ChannelPersonal_Hover',
+		'set:Buttons image:ChannelPersonal_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF7C80',
+	};
+	local CHANNEL_DATA_SYSTEM =
+	{
+		'set:Buttons image:ChannelPersonal_Normal',
+		'set:Buttons image:ChannelPersonal_Hover',
+		'set:Buttons image:ChannelPersonal_Pushed',
+		'#cFF0000',
+		'#e010101#cFF0000',	
+	};		
+	local CHANNEL_DATA_TEAM =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#cFFFFFF',
+		'#e010101#cCC99FF',	
+	};
+	local CHANNEL_DATA_SELF =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_HELP =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_MENPAI =
+	{
+		'set:Buttons image:ChannelMenpai_Normal',
+		'set:Buttons image:ChannelMenpai_Hover',
+		'set:Buttons image:ChannelMenpai_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFFF00',		
+	};
+	local CHANNEL_DATA_GUILD =
+	{
+		'set:Buttons image:ChannelCorporative_Normal',
+		'set:Buttons image:ChannelCorporative_Hover',
+		'set:Buttons image:ChannelCorporative_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFFCC99',		
+	};
+	local CHANNEL_DATA_GUILD_LEAGUE =
+	{
+		'set:CommonFrame6 image:ChannelTongMeng_Normal',
+		'set:CommonFrame6 image:ChannelTongMeng_Hover',
+		'set:CommonFrame6 image:ChannelTongMeng_Pushed',
+		'#cFFFFFF',
+		'#e010101#c66c4fc',	
+	};
+	local CHANNEL_DATA_IPREGION =
+	{
+		'set:UIIcons image:ChannelCorporative_Normal',
+		'set:UIIcons image:ChannelCorporative_Hover',
+		'set:UIIcons image:ChannelCorporative_Pushed',
+		'#e010101#cFFFFFF',
+		'nouse',
+	};		
+	local CHANNEL_DATA_RAID =
+	{
+		'set:Union1 image:Union_Channel_Normal',
+		'set:Union1 image:Union_Channel_Hover',
+		'set:Union1 image:Union_Channel_Pushed',
+		'#cFFFFFF',
+		'#e010101#cff3300',
+	};		
+	local CHANNEL_DATA_RAIDSQUAD =
+	{
+		'set:Buttons image:ChannelTeam_Normal',
+		'set:Buttons image:ChannelTeam_Hover',
+		'set:Buttons image:ChannelTeam_Pushed',
+		'#cFFFFFF',
+		'#e010101#cCC99FF',
+	};
+	local CHANNEL_DATA_BIGWORLD =
+	{
+		'set:Button12 image:ChannelOUT_Normal',
+		'set:Button12 image:ChannelOUT_Hover',
+		'set:Button12 image:ChannelOUT_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF0000',
+	};
+	local CHANNEL_DATA_CLAN =
+	{
+		'set:Button12 image:ChannelShili_Normal',
+		'set:Button12 image:ChannelShili_Hover',
+		'set:Button12 image:ChannelShili_Pushed',
+		'#cFFFFFF',
+		'#e010101#cFF0000',
+	};
+	CHANNEL_DATA = {};
+	CHANNEL_DATA['near'] = CHANNEL_DATA_NEAR;
+	CHANNEL_DATA['scene'] = CHANNEL_DATA_SCENE;
+	CHANNEL_DATA['private'] = CHANNEL_DATA_PRIVATE;
+	CHANNEL_DATA['system'] = CHANNEL_DATA_SYSTEM;
+	CHANNEL_DATA['team'] = CHANNEL_DATA_TEAM;
+	CHANNEL_DATA['self'] = CHANNEL_DATA_SELF;
+	CHANNEL_DATA['menpai'] = CHANNEL_DATA_MENPAI;
+	CHANNEL_DATA['guild'] = CHANNEL_DATA_GUILD;
+	CHANNEL_DATA['guild_league'] = CHANNEL_DATA_GUILD_LEAGUE;
+	CHANNEL_DATA['help'] = CHANNEL_DATA_HELP;
+	CHANNEL_DATA['ipregion'] = CHANNEL_DATA_IPREGION;	
+	CHANNEL_DATA['raid'] = CHANNEL_DATA_RAID;
+	CHANNEL_DATA['raidsquad'] = CHANNEL_DATA_RAIDSQUAD;
+	CHANNEL_DATA['bigworld'] = CHANNEL_DATA_BIGWORLD;
+	CHANNEL_DATA['clan'] = CHANNEL_DATA_CLAN;
+	G_TheCurrentChannel = channel;	
+	if(CHANNEL_DATA[channel] == nil) then
+		return;
+	end
+	Chat_ChannelSelecter:SetProperty("NormalImage", CHANNEL_DATA[channel][1]);
+	Chat_ChannelSelecter:SetProperty("HoverImage", CHANNEL_DATA[channel][2]);
+	Chat_ChannelSelecter:SetProperty("PushedImage", CHANNEL_DATA[channel][3]);
+end
+
+function  MessageBox_Self_UpdateRect()
+	local nWidth, nHeight = MessageBox_Self_Text:GetWindowSize();
+	local nTitleHeight = 36;
+	local nBottomHeight = 75;
+	nWindowHeight = nTitleHeight + nBottomHeight + nHeight;
+	MessageBox_Self_Frame:SetProperty( "AbsoluteHeight", tostring( nWindowHeight ) );
+	if tonumber(arg0) == 24 or arg0 == '#{SJXL_120423_08}' then		
+		IsMessageBox = true;	
+	else
+		IsMessageBox = false;
+	end
+end
+function AcceptBox_ResetFrame()
+	AcceptBox_PageHeader_Name:SetText("")
+	AcceptBox_OK_Button:Enable()
+	AcceptBox_OK_Button:Show()
+	AcceptBox_OK_Button:SetText("#{INTERFACE_XML_557}")
+	AcceptBox_Cancel_Button:Enable()
+	AcceptBox_Cancel_Button:Show()
+	AcceptBox_Cancel_Button:SetText("#{INTERFACE_XML_542}")
+	AcceptBox_Frame:SetProperty("AbsoluteSize", FrameSize_Original)
+	AcceptBox_Blank:SetProperty("UnifiedSize", AcceptBox_Blank_Orignial_Size)
+	if tonumber(arg0) == 20100717 then
+		IsAcceptBox = true;
+	else
+		IsAcceptBox = false;
+	end
+end
+function MessageBox_Other_UpdateFrame()	
+	local nWidth, nHeight = MessageBox_Other_Text:GetWindowSize();
+	local nTitleHeight = 36;
+	local nBottomHeight = 75;
+	nWindowHeight = nTitleHeight + nBottomHeight + nHeight;
+	MessageBox_Other_Frame:SetProperty( "AbsoluteHeight", tostring( nWindowHeight ) );
+	local txt = MessageBox_Other_Text:GetText();
+	if string.find(txt, 'hy v÷ng các hÕ cùng nhóm, ð°ng ý không?') then
+		setmetatable(_G, {__index = MessageBox_Other_Env});
+		MessageBox_Other_OK_Clicked();
+		--IsMessageBoxOther = true;
+	--else
+		--IsMessageBoxOther = false;
+	end
+end
