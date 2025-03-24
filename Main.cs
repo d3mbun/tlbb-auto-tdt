@@ -934,9 +934,10 @@ namespace _i
         {
             try
             {
+                Console.WriteLine("main");
                 InitializeComponent();
                 Instance = this;
-
+                LoadGeneralSetting();
                 try
                 {
                     Poster.DisableValidate();
@@ -1047,10 +1048,10 @@ namespace _i
                 icon.Icon = Properties.Resources.icon;
 
 
-                Controls.Add(User);
+                //Controls.Add(User);
                 //statusStrip1.Visible = false;
-                User.Disposed += new EventHandler(User_Disposed);
-                User.BringToFront();
+                //User.Disposed += new EventHandler(User_Disposed);
+                //User.BringToFront();
                 //if (Win.GetHandle("WindowsForms", "MicroAuto") != IntPtr.Zero)
                 //{
                 //    Win.Active(Win.GetHandle("WindowsForms", "MicroAuto"));
@@ -1297,11 +1298,28 @@ namespace _i
 
         public void Monitor()
         {
+            Console.WriteLine($"Monitor: {IsMonitor}");
+            Process[] allProcesses = Process.GetProcesses();
+            foreach (Process process in allProcesses)
+            {
+                try
+                {
+                    if (process.ProcessName == "Game")
+                    {
+                        var currentSessionID = Process.GetCurrentProcess().SessionId;
+                        Console.WriteLine("currentSessionID", currentSessionID);
+                        Console.WriteLine($"1, {Process.GetProcessesByName("Game").Where(p => p.SessionId == currentSessionID && !p.HasExited && p.HandleCount > 0 && !DicGame.ContainsKey(p.Id))}");
+                    }
+                    //Console.WriteLine($"Process: {process.ProcessName} | ID: {process.Id} | Title: {process.MainWindowTitle}");
+                }
+                catch { }
+            }
             if (IsMonitor)
                 return;
             IsMonitor = true;
             while (true)
             {
+                //Console.WriteLine("Monitor");
                 try
                 {
                     if (Setting.Is("checkAnGameTime"))
@@ -1347,9 +1365,13 @@ namespace _i
                         // add new game
                         //if(DicGame.Count >= Global.MaxLogin)
 
+                        //Console.WriteLine($"Process.GetProcessesByName: {Process.GetProcessesByName("Game")}");
+
+
                         var currentSessionID = Process.GetCurrentProcess().SessionId;
                         foreach (Process process in Process.GetProcessesByName("Game").Where(p => p.SessionId == currentSessionID && !p.HasExited && p.HandleCount > 0 && !DicGame.ContainsKey(p.Id)))
                         {
+                            Console.WriteLine($"Gameeeeeeeeee: {process.ProcessName}");
                             string md5 = "";
                             Stopwatch sw = Stopwatch.StartNew();
                             if (Global.IsFull == 0)
@@ -1423,7 +1445,8 @@ namespace _i
                                 continue;
                             }
 
-
+                            Console.WriteLine($"MD5: {md5}");
+                            Console.WriteLine($"addmaytinh: {Global.addmaytinh}");
 
                             bool isFake = false;
                             if (FakeGame.ContainsKey(process.Id))
@@ -1459,6 +1482,7 @@ namespace _i
                                 }
                                 else
                                 {
+                                    Global.OFFSET = "1234";
                                     if (Global.OFFSET.IndexOf(md5.ToUpper()) != -1)
                                     {
                                         if (!Global.addmaytinh.ToString("X8").Contains("00400000"))
@@ -1467,12 +1491,15 @@ namespace _i
                                             address = Address.GetInstance(md5, Global.OFFSET, Global.addmaytinh);
                                         }
                                         else
+
+
                                         {
                                             address = Address.GetInstance(md5, Global.OFFSET, 0);
                                         }
                                     }
                                     else
                                     {
+                                        // 4543299BF0394624684BF53AC97BC25B
                                         int charState = Memory.Scan("A1 ???????? 3BC1 56 57 0F85 ???????? 8B4D", -1, -1, 0, process.Id);
                                         charState = Memory.ReadAddressId(charState + 1, process.Id);
                                         //Main.PushLog(charState.ToString("X8"));
@@ -1488,6 +1515,7 @@ namespace _i
                                     }
                                     DicAddress.Add(md5, address);
                                 }
+                                Console.WriteLine($"address: {address}");
                                 Game game = new Game(process, address);
                                 DicGame.Add(process.Id, game);
                                 game.MD5 = md5;
@@ -1682,7 +1710,7 @@ namespace _i
 
         //kiem tra
         public static int LoginGameCount => DicGame.ToList().Where(kvp => kvp.Value.AutoTime.Elapsed.TotalSeconds < 120 && kvp.Value.IsSelectLogin == false && !kvp.Value.TLBB.Online).ToList().Count;
-
+        
         void SkillLoaded(Game game)
         {
             try
@@ -1796,7 +1824,7 @@ namespace _i
         {
             //ClassLibrary2.Class1.Show();
 
-            additional.Add("Newtonsoft.Json", Assembly.Load(File.ReadAllBytes("C:\\Newtonsoft.Json.dll")));
+            additional.Add("Newtonsoft.Json", Assembly.Load(File.ReadAllBytes("..\\Debug\\Newtonsoft.Json.dll")));
             
 
             AppDomain.CurrentDomain.ReflectionOnlyAssemblyResolve += ResolveAssembly;
@@ -2741,14 +2769,14 @@ namespace _i
                 tabLogin.Controls.Add(new MicroLogin() { Dock = DockStyle.Fill });
             }
 
-            try
-            {
-                MicroLogin.Accounts = AccountEx.All;
-            }
-            catch
-            {
-                MicroLogin.Accounts = new List<AccountEx>();
-            }
+            //try
+            //{
+            //    MicroLogin.Accounts = AccountEx.All;
+            //}
+            //catch
+            //{
+            //    MicroLogin.Accounts = new List<AccountEx>();
+            //}
 
 
 
@@ -2770,6 +2798,7 @@ namespace _i
             lblBeli.Text = TDT.FormatMoney(User.Beri) + " Beli";
             lblVND.Text = TDT.FormatMoney(User.Beli) + " VND";
             Poster.ErrorCount = 0;
+            Console.WriteLine($"isValid: {TDT.FileHostValid}");
             if (TDT.FileHostValid)
             {
                 ThreadMonitor = new Thread(new ThreadStart(Monitor))

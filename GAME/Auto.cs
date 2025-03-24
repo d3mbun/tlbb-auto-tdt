@@ -9,6 +9,7 @@ namespace _i
     {
         public void Auto()
         {
+            Console.WriteLine("auto starting....");
             if (!IsInit)
             {
                 Init();

@@ -193,12 +193,17 @@ namespace _i
                 Pk.Clear();
                 Monters.Clear();
 
+                Console.WriteLine($"address: {game.Address.FirstObject[0]}, {game.Address.FirstObject[1]} , {game.Address.FirstObject[2]}");
+
                 HashSet<uint> hash = EnumGameObject(new uint[] { (uint)game.Address.FirstObject[0], (uint)game.Address.FirstObject[1], (uint)game.Address.FirstObject[2] });
-    
+                Console.WriteLine($"HashSet count: {hash.Count}");
+
                 foreach (uint address in hash)
                 {
+                    Console.WriteLine($"adrress: {address}");
                     GameObject _object = new GameObject(game, address);
                     _object = _object.ReadObj();
+                    Console.WriteLine($"Game object: {_object.Name}");
                     if (_object.Name != null)
                     {
                         if (_object.Distance <= Setting.Value("numberTamXa") && Setting.Value("numberTamXa") > 0)

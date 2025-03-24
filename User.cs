@@ -88,7 +88,8 @@ namespace _i
         {
             ////////////////////////////////////////////////////////////////////////
             //lecaotri
-            
+                        LoginSettings();
+            return;
             bool flag = false;
             if (TDT.CheckForSQLInjection(this.txtLoginEmail.Text.Trim()))
             {
@@ -213,14 +214,16 @@ namespace _i
                 Scripts.Load();
                 if (Global.IniParser == null)
                 {
-                    Global.IniParser = new IniParser(Poster.CurlGet("https://tieudattai.org/microauto/user.php?cmd=ini&do=load&email=" + HttpUtility.UrlEncode(User.Email) + "&pass=" + HttpUtility.UrlEncode(User.Pass), null, true));
-                    foreach (var l in Global.IniParser.EnumSection("MicroLogin"))
-                    {
-                        if ((TDT.IsValidEmail(l) || TDT.IsPhoneNumber(l)))
-                        {
-                            Game.IniParser.Write("MicroLogin", l, Global.IniParser.Read("MicroLogin", l));
-                        }
-                    }
+                    Game.IniParser.Write("MicroLogin", "1", Global.IniParser.Read("MicroLogin","abc"));
+
+                    //Global.IniParser = new IniParser(Poster.CurlGet("https://tieudattai.org/microauto/user.php?cmd=ini&do=load&email=" + HttpUtility.UrlEncode(User.Email) + "&pass=" + HttpUtility.UrlEncode(User.Pass), null, true));
+                    //foreach (var l in Global.IniParser.EnumSection("MicroLogin"))
+                    //{
+                    //    if ((TDT.IsValidEmail(l) || TDT.IsPhoneNumber(l)))
+                    //    {
+                    //        Game.IniParser.Write("MicroLogin", l, Global.IniParser.Read("MicroLogin", l));
+                    //    }
+                    //}
                 }
                 Invoke(new Action(() =>
                 {

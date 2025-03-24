@@ -1027,9 +1027,11 @@ for i = 0, DataPool:GetApplyMemberCount() do
 
         public Game(Process process, Address address)
         {
+            Console.WriteLine("Game Init");
             Address = address;
             Process = process;
             ProcessId = process.Id;
+            Console.WriteLine($"processId: {process.Id}");
             AOB = new AOB((uint)process.Id);
             PacketItems = new PacketItems(this);
             Handle = Win.GetHandle(ProcessId, "TianLongBaBu WndClass");
@@ -1046,7 +1048,7 @@ for i = 0, DataPool:GetApplyMemberCount() do
 
             Objects = new GameObjects(this);
             TLBB = new TLBB(this);
-
+            Console.WriteLine($"Game init: {TLBB.Address}");
             ThreadAuto = new Thread(new ThreadStart(FuncAuto))
             {
                 IsBackground = true,
@@ -5486,6 +5488,8 @@ for i = 0, DataPool:GetApplyMemberCount() do
 
         public void Init()
         {
+            System.Console.WriteLine("FuncLuaToString", FuncLuaToString);
+            System.Console.WriteLine("Address.GaneTyoe", Address.GameType);
             if (FuncLuaToString == 0)
             {
                 if (Address.GameType == 1)
@@ -5500,6 +5504,7 @@ for i = 0, DataPool:GetApplyMemberCount() do
             Handle = Win.GetHandle(ProcessId, "TianLongBaBu WndClass");
             if (Handle == IntPtr.Zero)
                 Handle = Win.GetHandle(ProcessId, "kezgxubdpydrpeb");
+            System.Console.WriteLine("Handle", Handle);
 
             if (Handle != IntPtr.Zero)
             {
